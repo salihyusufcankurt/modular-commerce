@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiMenu, FiSearch, FiUser, FiHeart, FiShoppingCart } from 'react-icons/fi';
-import '../Style/Header.css';
+import '../../Style/Header/Header.css';
 
 const Header = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiMenu, FiSearch, FiUser, FiHeart, FiShoppingCart } from 'react-icons/fi';
-import '../Style/HeaderMobile.css';
+import '../../Style/Header/HeaderMobile.css';
 
 const HeaderMobile = () => {
   return (
@@ -24,17 +24,20 @@ const HeaderMobile = () => {
         <input type="text" className="form-control" placeholder="Kategori, ürün veya marka ara" />
       </div>
 
-      {/* Kategoriler: Yana Kaydırılabilir */}
-      <nav className="category-scroll d-flex gap-3 overflow-auto pb-2">
-            <a href="#">Kadın</a>
-            <a href="#">Erkek</a>
-            <a href="#">Anne & Çocuk</a>
-            <a href="#">Ev & Yaşam</a>
-            <a href="#">Süpermarket</a>
-            <a href="#">Kozmetik</a>
-            <a href="#">Çok Satanlar </a>
-            <a href="#">Flaş Ürünler </a>
-      </nav>
+{/* Kategoriler: Yana Kaydırılabilir */}
+<nav className="category-scroll-wrapper">
+  <div className="category-scroll d-flex gap-3">
+    <a href="#">Kadın</a>
+    <a href="#">Erkek</a>
+    <a href="#">Anne & Çocuk</a>
+    <a href="#">Ev & Yaşam</a>
+    <a href="#">Süpermarket</a>
+    <a href="#">Kozmetik</a>
+    <a href="#">Çok Satanlar</a>
+    <a href="#">Flaş Ürünler</a>
+  </div>
+</nav>
+
     </header>
   );
 };
