@@ -4,7 +4,7 @@ const ProductList = () => {
   const products = [
     { id: 1, name: 'Ürün A', price: '₺499', image: 'https://via.placeholder.com/150' },
     { id: 2, name: 'Ürün B', price: '₺799', image: 'https://via.placeholder.com/150' },
-    { id: 3, name: 'Ürün C', price: '₺299', image: 'https://via.placeholder.com/150' },
+    { id: 3, name: 'Ürün Ç', price: '₺299', image: 'https://via.placeholder.com/150' },
   ];
 
   return (
