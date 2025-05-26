@@ -5,6 +5,7 @@ import '../Style/Header.css';
 const Header = () => {
   return (
     <header className="container">
+      {/* Üst Bilgi Linkleri */}
       <div className="row">
         <div className="col d-flex justify-content-end gap-3 header-top">
           <a href="#">İndirim Kuponlarım</a>
@@ -13,17 +14,16 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Logo - Arama - Sağ Menü */}
       <div className="row align-items-center py-3">
         <div className="col-3">
           <h1 className="logo mb-0">Masion<span>Bloom</span></h1>
         </div>
 
-        <div className="col-6 d-flex align-items-center gap-3">     
-          <div className="flex-grow-1">
-            <div className="input-group">
-              <input type="text" className="form-control" placeholder="Aradığınız ürün, kategori veya markayı yazınız" />
-              <button className="btn btn-warning"><FiSearch /></button>
-            </div>
+        <div className="col-6">
+          <div className="input-group">
+            <input type="text" className="form-control" placeholder="Aradığınız ürün, kategori veya markayı yazınız" />
+            <button className="btn btn-warning"><FiSearch /></button>
           </div>
         </div>
 
@@ -43,24 +43,25 @@ const Header = () => {
         </div>
       </div>
 
-      <nav className="row py-2 border-bottom">
-        
-        <div className="col d-flex justify-content-between small flex-wrap category-menu">
-            <FiMenu className="menu-icon" />
-          <button className="btn btn-link p-0 text-uppercase small all-categories ">
+      {/* Menü ve Kategoriler */}
+      <nav className="row py-2 border-top border-bottom align-items-center">
+        <div className="col-12 d-flex align-items-center gap-3">
+          <FiMenu className="menu-icon" />
+          <button className="btn btn-link p-0 text-uppercase small all-categories">
             Tüm Kategoriler
             <span className="badge bg-danger text-white ms-2">Yeni</span>
           </button>
-          <a href="#">Kadın</a>
-          <a href="#">Erkek</a>
-          <a href="#">Anne & Çocuk</a>
-          <a href="#">Ev & Yaşam</a>
-          <a href="#">Süpermarket</a>
-          <a href="#">Kozmetik</a>
-          <a href="#">Ayakkabı & Çanta</a>
-          <a href="#">Elektronik</a>
-          <a href="#">Çok Satanlar <span className="badge bg-danger text-white">Yeni</span></a>
-          <a href="#">Flaş Ürünler <span className="badge bg-danger text-white">Yeni</span></a>
+
+          <div className="flex-grow-1 d-flex justify-content-between flex-wrap category-menu">
+            <a href="#">Kadın</a>
+            <a href="#">Erkek</a>
+            <a href="#">Anne & Çocuk</a>
+            <a href="#">Ev & Yaşam</a>
+            <a href="#">Süpermarket</a>
+            <a href="#">Kozmetik</a>
+            <a href="#">Çok Satanlar </a>
+            <a href="#">Flaş Ürünler </a>
+          </div>
         </div>
       </nav>
     </header>
