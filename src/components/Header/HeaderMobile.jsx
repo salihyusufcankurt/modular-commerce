@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiMenu, FiSearch, FiUser, FiHeart, FiShoppingCart } from 'react-icons/fi';
-import '../../Style/Header/HeaderMobile.css';
+import '../../style/header/HeaderMobile.css';
 
 const HeaderMobile = () => {
   return (
