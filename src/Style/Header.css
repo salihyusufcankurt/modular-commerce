@@ -8,6 +8,19 @@
   color: #000;
 }
 
+.category-menu a {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  color: #333;
+  text-decoration: none;
+}
+
+.category-menu a:hover {
+  color: orange;
+}
+
+
 .logo {
   font-size: 2.2rem;
   font-weight: 600;

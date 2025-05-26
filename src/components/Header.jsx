@@ -45,7 +45,7 @@ const Header = () => {
 
       <nav className="row py-2 border-bottom">
         
-        <div className="col d-flex gap-3 small flex-wrap ">
+        <div className="col d-flex justify-content-between small flex-wrap category-menu">
             <FiMenu className="menu-icon" />
           <button className="btn btn-link p-0 text-uppercase small all-categories ">
             Tüm Kategoriler
