@@ -1,25 +1,21 @@
 .footer {
   background-color: #f8f9fa;
-  padding: 3rem 0 2rem;
   margin-top: 2rem;
   border-top: 1px solid #e5e7eb;
 }
 
-.footer-container {
-  width: 100%;
+.footer .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
+  width: 100%;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2.5rem;
-  margin-bottom: 3rem;
+.footer-content {
+  padding: 2rem 0;
 }
 
-.footer-section h3 {
+.footer h5 {
   font-size: 1rem;
   font-weight: 600;
   color: #1a1a1a;
@@ -28,22 +24,26 @@
   letter-spacing: 0.5px;
 }
 
-.footer-links {
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.footer-link {
+.footer ul li a {
   color: #4b5563;
   text-decoration: none;
   transition: all 0.2s ease;
   font-size: 0.9rem;
   position: relative;
   width: fit-content;
+  display: block;
 }
 
-.footer-link:hover {
+.footer ul li a:hover {
   color: #f97316;
   transform: translateX(5px);
 }
@@ -53,15 +53,18 @@
   gap: 1.25rem;
 }
 
-.social-icon {
+.social-icons a {
   color: #4b5563;
   transition: all 0.3s ease;
   padding: 8px;
   border-radius: 50%;
   background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.social-icon:hover {
+.social-icons a:hover {
   color: #f97316;
   background-color: #fff;
   transform: translateY(-3px);
@@ -71,9 +74,7 @@
 .footer-bottom {
   border-top: 1px solid #e5e7eb;
   padding-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 2rem;
 }
 
 .footer-copyright {
@@ -121,36 +122,30 @@
 }
 
 @media (max-width: 768px) {
-  .footer {
-    padding: 2rem 0 1.5rem;
+  .footer-content {
+    padding: 1.5rem 0;
   }
 
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+  .footer .row > div {
+    margin-bottom: 2rem;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
+  .footer .row > div:last-child {
+    margin-bottom: 0;
   }
 
-  .footer-legal {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+  .social-icons {
+    justify-content: flex-start;
   }
 }
 
 @media (max-width: 480px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
+  .footer ul {
+    align-items: center;
   }
 
-  .footer-links {
-    align-items: center;
+  .footer h5 {
+    text-align: center;
   }
 
   .social-icons {

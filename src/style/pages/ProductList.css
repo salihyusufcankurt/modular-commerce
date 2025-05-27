@@ -2,10 +2,85 @@
     min-height: 100vh;
     background-color: #f8f9fa;
     padding-bottom: 2rem;
+    overflow-x: hidden;
 }
 
-.container {
-    min-width: 320px;
+/* Custom gutter control */
+:root {
+    --gutter-x: 10px;
+    --gutter-y: 10px;
+}
+
+/* Override Bootstrap gutter */
+.g-custom {
+    --bs-gutter-x: var(--gutter-x);
+    --bs-gutter-y: var(--gutter-y);
+    margin-right: calc(var(--gutter-x) * -0.5);
+    margin-left: calc(var(--gutter-x) * -0.5);
+    margin-top: 0;
+}
+
+/* Container override */
+.product-list-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+/* Column override */
+.product-list-page .col-6,
+.product-list-page .col-md-4,
+.product-list-page .col-lg-3 {
+    padding-right: calc(var(--gutter-x) * 0.5);
+    padding-left: calc(var(--gutter-x) * 0.5);
+    padding-bottom: var(--gutter-y);
+}
+
+/* Card wrapper styles */
+.card-wrapper {
+    width: 100%;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1200px) {
+    .product-list-page .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .product-list-page .col-md-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .product-list-page .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 575px) {
+    .product-list-page .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .card-wrapper {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1200px) {
+    .product-list-page .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
 }
 
 /* Scrollbar stilleri */

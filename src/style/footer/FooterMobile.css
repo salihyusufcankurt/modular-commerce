@@ -4,10 +4,18 @@
   border-top: 1px solid #e5e7eb;
 }
 
+.footer-mobile .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+}
+
 .accordion-wrapper {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  padding: 1rem 0;
 }
 
 .accordion-section {
@@ -85,8 +93,11 @@
 }
 
 .social-section {
+  padding: 1.5rem 0;
   text-align: center;
-  border-top: 1px solid #e5e7eb;
+  border: 1px solid #e5e7eb;
+  background-color: #fff;
+  border-radius: 8px;
 }
 
 .social-title {
@@ -95,6 +106,7 @@
   color: #1a1a1a;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-bottom: 1rem;
 }
 
 .social-icons-mobile {
@@ -103,7 +115,7 @@
   gap: 1.5rem;
 }
 
-.social-icon-mobile {
+.social-icons-mobile a {
   color: #4b5563;
   transition: all 0.3s ease;
   padding: 0.75rem;
@@ -114,7 +126,7 @@
   justify-content: center;
 }
 
-.social-icon-mobile:hover {
+.social-icons-mobile a:hover {
   color: #f97316;
   background-color: #fff;
   transform: translateY(-2px);

@@ -35,21 +35,20 @@ const FooterMobile = () => {
 
   return (
     <footer className="footer-mobile">
-      <div className="container py-3">
-        {/* Akordiyon Menü */}
-        <div className="accordion-wrapper mb-3">
+      <div className="container">
+        <div className="accordion-wrapper">
           {sections.map((section, index) => (
             <div key={index} className="accordion-section">
               <button
                 className="accordion-button"
-                onClick={() => toggleSection(section.title)}
+                onClick={() => toggleSection(index)}
               >
                 <span>{section.title}</span>
                 <FaChevronDown
-                  className={`accordion-icon ${openSection === section.title ? 'open' : ''}`}
+                  className={`accordion-icon ${openSection === index ? 'open' : ''}`}
                 />
               </button>
-              {openSection === section.title && (
+              {openSection === index && (
                 <div className="accordion-content">
                   <ul className="mobile-links">
                     {section.links.map((link, linkIndex) => (
@@ -64,28 +63,14 @@ const FooterMobile = () => {
               )}
             </div>
           ))}
-        </div>
-
-        {/* Sosyal Medya */}
-        <div className="social-section py-2">
-          <h3 className="social-title mb-3">Bizi Takip Edin</h3>
-          <div className="social-icons-mobile">
-            <a href="#" className="social-icon-mobile"><FaFacebook size={24} /></a>
-            <a href="#" className="social-icon-mobile"><FaTwitter size={24} /></a>
-            <a href="#" className="social-icon-mobile"><FaInstagram size={24} /></a>
-            <a href="#" className="social-icon-mobile"><FaYoutube size={24} /></a>
-          </div>
-        </div>
-
-        {/* Alt Bilgi */}
-        <div className="footer-mobile-bottom pt-3">
-          <p className="mobile-copyright mb-3">
-            © 2024 Modular Commerce. Tüm hakları saklıdır.
-          </p>
-          <div className="mobile-legal-links">
-            <Link to="/" className="mobile-legal-link">Gizlilik Politikası</Link>
-            <Link to="/" className="mobile-legal-link">Kullanım Koşulları</Link>
-            <Link to="/" className="mobile-legal-link">KVKK</Link>
+          <div className="social-section">
+            <h6 className="social-title">Bizi Takip Edin</h6>
+            <div className="social-icons-mobile">
+              <Link to="/"><FaFacebook size={24} /></Link>
+              <Link to="/"><FaTwitter size={24} /></Link>
+              <Link to="/"><FaInstagram size={24} /></Link>
+              <Link to="/"><FaYoutube size={24} /></Link>
+            </div>
           </div>
         </div>
       </div>

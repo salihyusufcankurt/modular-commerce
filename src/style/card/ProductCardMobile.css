@@ -1,105 +1,185 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 .product-card-mobile {
     width: 100%;
-    height: 360px;
+    min-width: 280px;
+    max-width: 300px;
+    height: auto;
     position: relative;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background: #fff;
-    border-radius: 6px;
+    border-radius: 4px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    border: 1px solid #e5e5e5;
+    margin: 0 auto;
 }
 
 .product-tumb-mobile {
-    height: 180px;
-    padding: 12px;
-    background: #f9f9f9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 280px;
+    padding: 0;
+    margin: -1px -1px 0;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
 }
 
 .product-tumb-mobile img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .card-content-mobile {
-    padding: 12px;
+    padding: 12px 16px;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
+.brand-name-mobile {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    color: #1c1c1c;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 0 2px;
+    letter-spacing: 0.5px;
+}
+
 .card-header-mobile {
     margin: 0;
-    margin-bottom: 8px;
-    height: 50px;
-    overflow: hidden;
+    margin-bottom: 6px;
+    height: auto;
+    min-height: 36px;
 }
 
 .custom-a-mobile {
-    color: #4a4a4a;
+    color: #767676;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.4;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.3;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.rating-section-mobile {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stars-mobile {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.star-mobile {
+    color: #ffd700;
+    font-size: 12px;
+}
+
+.review-count-mobile {
+    color: #767676;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 .card-bottom-field-mobile {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    margin-top: 8px;
+    gap: 4px;
+    margin-top: auto;
 }
 
 .card-price-field-mobile {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    align-items: flex-start;
+    gap: 0;
+}
+
+.price-row-mobile {
+    display: flex;
+    align-items: center;
 }
 
 .product-sale-price-mobile {
-    font-size: 18px;
-    color: #fbb72c;
-    font-weight: 600;
+    color: #1c1c1c;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    position: relative;
+    line-height: 1;
 }
 
-.product-old-price-mobile {
-    font-size: 14px;
+.price-main-mobile {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+}
+
+.price-decimal-mobile {
+    font-size: 11px;
     font-weight: 400;
-    color: #C2BFBA;
-    text-decoration: line-through;
+    position: absolute;
+    top: 2px;
+    right: -16px;
+}
+
+.price-currency-mobile {
+    font-size: 11px;
+    font-weight: 400;
+    position: absolute;
+    top: 2px;
+    right: -28px;
+}
+
+.free-shipping-mobile {
     font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #00a650;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.delivery-date-mobile {
+    color: #767676;
 }
 
 .addButton-mobile {
-    width: 100%;
-    background-color: #C2BFBA;
+    width: fit-content;
+    min-width: 90px;
+    background-color: #ffe707;
     border: none;
-    border-radius: 4px;
-    color: #ffffff;
+    border-radius: 20px;
+    color: #1c1c1c;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0 16px;
+    height: 32px;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .addButton-mobile:hover {
-    background-color: #fbb72c;
+    background-color: #ffd900;
 }
 
 .addButton-mobile:active {

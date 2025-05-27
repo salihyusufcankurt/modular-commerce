@@ -1,23 +1,80 @@
 import React from 'react';
+import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 import '../../style/card/ProductCard.css';
 
-const ProductCard = ({ title, image, salePrice, oldPrice }) => {
+const ProductCard = ({ title, image, salePrice, oldPrice, rating = 4.5, reviewCount = 644, freeShipping = true }) => {
+  const renderStars = (rating) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+
+    for (let i = 0; i < 5; i++) {
+      if (i < fullStars) {
+        stars.push(<FaStar key={i} className="star" />);
+      } else if (i === fullStars && hasHalfStar) {
+        stars.push(<FaStarHalfAlt key={i} className="star" />);
+      } else {
+        stars.push(<FaRegStar key={i} className="star" />);
+      }
+    }
+    return stars;
+  };
+
+  // Format price with dot for decimals and split into main and decimal parts
+  const formatPrice = (price) => {
+    const [main, decimal] = price.toString().split('.');
+    return {
+      main: main.replace(/\B(?=(\d{3})+(?!\d))/g, "."),
+      decimal: decimal || "00"
+    };
+  };
+
+  // Get delivery date range (today + 1 to today + 2)
+  const getDeliveryDates = () => {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    const dayAfter = new Date(today);
+    dayAfter.setDate(today.getDate() + 2);
+    
+    return `${tomorrow.getDate()} - ${dayAfter.getDate()} May`;
+  };
+
+  const formattedPrice = formatPrice(salePrice);
+  const formattedOldPrice = oldPrice ? formatPrice(oldPrice) : null;
+
   return (
     <div className="product-card">
-      <h4 className="card-header">
-        <a className="custom-a" href="#">{title}</a>
-      </h4>
       <div className="product-tumb">
         <img src={image} alt={title} />
       </div>
+      <div className="card-header">
+        <h3 className="brand-name">Maison Bloom</h3>
+        <a href="#" className="custom-a">{title}</a>
+      </div>
+      <div className="rating-section">
+        <div className="stars">
+          {renderStars(rating)}
+        </div>
+        <span className="review-count">({reviewCount})</span>
+      </div>
       <div className="card-bottom-field">
         <div className="card-price-field">
-          <div className="product-sale-price">{salePrice}TL</div>
-          <div className="product-old-price">{oldPrice}TL</div>
+          <div className="price-row">
+            <div className="product-sale-price">
+              <span className="price-main">{formattedPrice.main}</span>
+              <span className="price-decimal">{formattedPrice.decimal}</span>
+              <span className="price-currency">TL</span>
+            </div>
+          </div>
+          {freeShipping && (
+            <div className="free-shipping">
+              Ücretsiz Kargo
+              <span className="delivery-date">{getDeliveryDates()}</span>
+            </div>
+          )}
         </div>
-        <div className="card-add-to-cart-field">
-          <button className="addButton">Sepete ekle</button>
-        </div>
+        <button className="addButton">Sepete Ekle</button>
       </div>
     </div>
   );
