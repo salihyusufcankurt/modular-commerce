@@ -4,32 +4,29 @@
   border-top: 1px solid #e5e7eb;
 }
 
-.footer-mobile-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem 15px;
+.accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .accordion-section {
-  border-bottom: 1px solid #e5e7eb;
+  border: 1px solid #e5e7eb;
   background-color: #fff;
-  margin-bottom: 0.5rem;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .accordion-button {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: none;
+  background: #fff;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .accordion-button:hover {
@@ -38,7 +35,7 @@
 
 .accordion-button span {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #1a1a1a;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -48,6 +45,7 @@
   transform-origin: center;
   transition: transform 0.3s ease;
   color: #6b7280;
+  font-size: 1.1rem;
 }
 
 .accordion-icon.open {
@@ -56,11 +54,15 @@
 }
 
 .accordion-content {
-  padding: 0.5rem 1rem 1rem;
+  padding: 0.75rem 1.25rem 1.25rem;
   background-color: #fff;
+  border-top: 1px solid #f3f4f6;
 }
 
 .mobile-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -70,28 +72,27 @@
   color: #4b5563;
   text-decoration: none;
   transition: all 0.2s ease;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  display: block;
   padding: 0.5rem;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .mobile-link:hover {
   color: #f97316;
   background-color: #f8f9fa;
-  padding-left: 1rem;
+  padding-left: 0.75rem;
 }
 
 .social-section {
-  padding: 1.5rem 1rem;
   text-align: center;
-  margin-top: 1rem;
+  border-top: 1px solid #e5e7eb;
 }
 
 .social-title {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #1a1a1a;
-  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -100,35 +101,34 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .social-icon-mobile {
   color: #4b5563;
   transition: all 0.3s ease;
-  padding: 10px;
+  padding: 0.75rem;
   border-radius: 50%;
   background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-icon-mobile:hover {
   color: #f97316;
   background-color: #fff;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .footer-mobile-bottom {
   border-top: 1px solid #e5e7eb;
-  padding-top: 1.5rem;
   text-align: center;
-  margin-top: 1rem;
 }
 
 .mobile-copyright {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: #6b7280;
-  margin-bottom: 1rem;
 }
 
 .mobile-legal-links {
@@ -139,7 +139,7 @@
 }
 
 .mobile-legal-link {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: #6b7280;
   text-decoration: none;
   transition: all 0.2s ease;
