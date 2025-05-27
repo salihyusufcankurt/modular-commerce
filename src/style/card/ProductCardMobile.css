@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+.product-card-mobile {
+    width: 100%;
+    height: 360px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-tumb-mobile {
+    height: 180px;
+    padding: 12px;
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-tumb-mobile img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.card-content-mobile {
+    padding: 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header-mobile {
+    margin: 0;
+    margin-bottom: 8px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.custom-a-mobile {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-bottom-field-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.card-price-field-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+.product-sale-price-mobile {
+    font-size: 18px;
+    color: #fbb72c;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+.product-old-price-mobile {
+    font-size: 14px;
+    font-weight: 400;
+    color: #C2BFBA;
+    text-decoration: line-through;
+    font-family: 'Roboto', sans-serif;
+}
+
+.addButton-mobile {
+    width: 100%;
+    background-color: #C2BFBA;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.addButton-mobile:hover {
+    background-color: #fbb72c;
+}
+
+.addButton-mobile:active {
+    transform: scale(0.98);
+} 

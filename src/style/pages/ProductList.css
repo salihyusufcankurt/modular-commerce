@@ -1,0 +1,27 @@
+.product-list-page {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding-bottom: 2rem;
+}
+
+.container {
+    min-width: 320px;
+}
+
+/* Scrollbar stilleri */
+.product-list-page::-webkit-scrollbar {
+    width: 8px;
+}
+
+.product-list-page::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.product-list-page::-webkit-scrollbar-thumb {
+    background: #fbb72c;
+    border-radius: 4px;
+}
+
+.product-list-page::-webkit-scrollbar-thumb:hover {
+    background: #e9a922;
+} 

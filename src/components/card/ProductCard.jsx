@@ -16,7 +16,7 @@ const ProductCard = ({ title, image, salePrice, oldPrice }) => {
           <div className="product-old-price">{oldPrice}TL</div>
         </div>
         <div className="card-add-to-cart-field">
-          <a href="#" className="addButton">Sepete ekle</a>
+          <button className="addButton">Sepete ekle</button>
         </div>
       </div>
     </div>

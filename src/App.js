@@ -8,7 +8,7 @@ function App() {
     <Router>
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path="/" element={<div>Hoşgeldiniz!</div>} />
+          <Route path="/" element={<ProductList />} />
           <Route path="/products" element={<ProductList />} />
           <Route path="/cart" element={<div>Sepet Sayfası (daha sonra)</div>} />
         </Route>
