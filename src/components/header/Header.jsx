@@ -1,8 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FiMenu, FiSearch, FiUser, FiHeart, FiShoppingCart } from 'react-icons/fi';
 import '../../style/header/Header.css';
 
 const Header = () => {
+  const categories = [
+    { id: 'kadin', name: 'Kadın' },
+    { id: 'erkek', name: 'Erkek' },
+    { id: 'anne-cocuk', name: 'Anne & Çocuk' },
+    { id: 'ev-yasam', name: 'Ev & Yaşam' },
+    { id: 'supermarket', name: 'Süpermarket' },
+    { id: 'kozmetik', name: 'Kozmetik' },
+    { id: 'cok-satanlar', name: 'Çok Satanlar' },
+    { id: 'flas-urunler', name: 'Flaş Ürünler' }
+  ];
+
   return (
     <header className="container">
       {/* Üst Bilgi Linkleri */}
@@ -17,7 +29,9 @@ const Header = () => {
       {/* Logo - Arama - Sağ Menü */}
       <div className="row align-items-center py-3">
         <div className="col-3">
-          <h1 className="logo mb-0">Masion<span>Bloom</span></h1>
+          <Link to="/" className="logo mb-0">
+            Maison<span>Bloom</span>
+          </Link>
         </div>
 
         <div className="col-6">
@@ -53,14 +67,11 @@ const Header = () => {
           </button>
 
           <div className="flex-grow-1 d-flex justify-content-between flex-wrap category-menu">
-            <a href="#">Kadın</a>
-            <a href="#">Erkek</a>
-            <a href="#">Anne & Çocuk</a>
-            <a href="#">Ev & Yaşam</a>
-            <a href="#">Süpermarket</a>
-            <a href="#">Kozmetik</a>
-            <a href="#">Çok Satanlar </a>
-            <a href="#">Flaş Ürünler </a>
+            {categories.map(category => (
+              <Link key={category.id} to={`/products?category=${category.id}`}>
+                {category.name}
+              </Link>
+            ))}
           </div>
         </div>
       </nav>

@@ -1,3 +1,16 @@
+/* Logo Stilleri */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+}
+
+.logo span {
+  color: orange;
+}
+
 /* Kategori Scroll Kapsayıcısı (Wrapper) */
 .category-scroll-wrapper {
     overflow-x: auto;

@@ -20,10 +20,17 @@
   color: orange;
 }
 
-
 .logo {
   font-size: 2.2rem;
   font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: #000;
 }
 
 .logo span {

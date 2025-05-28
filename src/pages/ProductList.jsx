@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 import CardWrapper from '../components/card/CardWrapper';
 import { getProducts } from '../services/product/productService';
 import '../style/pages/ProductList.css';
@@ -7,12 +8,21 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const location = useLocation();
+  const categoryId = new URLSearchParams(location.search).get('category');
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const data = await getProducts();
-        setProducts(data);
+        let filteredProducts = categoryId
+          ? data.filter(product => product.categories.includes(categoryId))
+          : data;
+        
+        // Sort products by sellCount in descending order
+        filteredProducts = filteredProducts.sort((a, b) => b.sellCount - a.sellCount);
+        
+        setProducts(filteredProducts);
         setLoading(false);
       } catch (err) {
         setError('Ürünler yüklenirken bir hata oluştu.');
@@ -21,7 +31,7 @@ const ProductList = () => {
     };
 
     fetchProducts();
-  }, []);
+  }, [categoryId]);
 
   if (loading) {
     return (
@@ -43,6 +53,16 @@ const ProductList = () => {
     );
   }
 
+  if (products.length === 0) {
+    return (
+      <div className="product-list-page">
+        <div className="container py-4">
+          <div className="text-center">Bu kategoride ürün bulunamadı.</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="product-list-page">
       <div className="container py-4">
@@ -57,6 +77,7 @@ const ProductList = () => {
                 oldPrice={product.price.old}
                 rating={product.rating}
                 reviewCount={product.reviewCount}
+                shipping={product.shipping}
               />
             </div>
           ))}

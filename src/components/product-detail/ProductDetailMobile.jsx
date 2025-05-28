@@ -135,36 +135,36 @@ const ProductDetailMobile = ({ product }) => {
             )}
           </div>
         </div>
-      </div>
 
-      {/* Sabit Alt Bar */}
-      <div className="bottom-bar-mobile">
-        <div className="bottom-bar-actions">
-          <button className="wishlist-button-mobile">
-            <FiHeart />
-          </button>
-          <button className="share-button-mobile">
-            <FiShare2 />
-          </button>
-          <button className="add-to-cart-mobile">Sepete Ekle</button>
+        {/* Sabit Alt Bar */}
+        <div className="bottom-bar-mobile">
+          <div className="bottom-bar-actions">
+            <button className="wishlist-button-mobile">
+              <FiHeart />
+            </button>
+            <button className="share-button-mobile">
+              <FiShare2 />
+            </button>
+            <button className="add-to-cart-mobile">Sepete Ekle</button>
+          </div>
         </div>
-      </div>
 
-      {/* Ürün Detayları Accordion */}
-      <div className="product-details-accordion">
-        <div className="accordion-item">
-          <h3>Ürün Açıklaması</h3>
-          <p>{product.description}</p>
-        </div>
-        <div className="accordion-item">
-          <h3>Ürün Özellikleri</h3>
-          <div className="specifications-list-mobile">
-            {product.specifications.map((spec, index) => (
-              <div key={index} className="specification-item-mobile">
-                <span className="spec-label-mobile">{spec.label}:</span>
-                <span className="spec-value-mobile">{spec.value}</span>
-              </div>
-            ))}
+        {/* Ürün Detayları Accordion */}
+        <div className="product-details-accordion">
+          <div className="accordion-item">
+            <h3>Ürün Açıklaması</h3>
+            <p>{product.description}</p>
+          </div>
+          <div className="accordion-item">
+            <h3>Ürün Özellikleri</h3>
+            <div className="specifications-list-mobile">
+              {product.specifications.map((spec, index) => (
+                <div key={index} className="specification-item-mobile">
+                  <span className="spec-label-mobile">{spec.label}:</span>
+                  <span className="spec-value-mobile">{spec.value}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

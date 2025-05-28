@@ -3,7 +3,16 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import '../../style/card/ProductCard.css';
 
-const ProductCard = ({ title, image, salePrice, oldPrice, rating = 4.5, reviewCount = 644, freeShipping = true, id }) => {
+const ProductCard = ({ 
+  title, 
+  image, 
+  salePrice, 
+  oldPrice, 
+  rating = 4.5, 
+  reviewCount = 644, 
+  shipping,
+  id 
+}) => {
   const navigate = useNavigate();
 
   const renderStars = (rating) => {
@@ -76,10 +85,10 @@ const ProductCard = ({ title, image, salePrice, oldPrice, rating = 4.5, reviewCo
               <span className="price-currency">TL</span>
             </div>
           </div>
-          {freeShipping && (
+          {shipping?.isFreeShipping && (
             <div className="free-shipping">
               Ücretsiz Kargo
-              <span className="delivery-date">{getDeliveryDates()}</span>
+              <span className="delivery-date">{shipping.estimatedDelivery}</span>
             </div>
           )}
         </div>
