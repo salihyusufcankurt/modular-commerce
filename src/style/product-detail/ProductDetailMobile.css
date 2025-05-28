@@ -1,73 +1,81 @@
 .product-detail-mobile {
-  position: relative;
-  padding-bottom: 80px; /* Bottom bar için alan */
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  min-height: 100vh;
+  padding-bottom: 80px;
 }
 
-/* Görsel Slider */
-.image-slider {
-  position: relative;
+/* Product Images */
+.product-images-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+.main-image-mobile {
   width: 100%;
   height: 350px;
-  background-color: #f8f9fa;
-  margin: 0;
-}
-
-.product-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background-color: #f8f9fa;
-}
-
-.slider-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.9);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  z-index: 2;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.slider-button.prev {
-  left: 10px;
+.product-image-mobile {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
 }
 
-.slider-button.next {
-  right: 10px;
-}
-
-.image-dots {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+.thumbnail-list-mobile {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin: 0 -0.5rem;
 }
 
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+.thumbnail-list-mobile::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnail-mobile {
+  width: 70px;
+  height: 70px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
   cursor: pointer;
+  transition: border-color 0.2s ease;
+  flex-shrink: 0;
+  background: white;
 }
 
-.dot.active {
-  background-color: #f97316;
+.thumbnail-mobile.active {
+  border-color: #f97316;
 }
 
-/* Ürün Bilgileri */
+.thumbnail-mobile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Product Info */
 .product-info-mobile {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: white;
 }
 
 .product-header-mobile {
@@ -78,18 +86,20 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  color: #1f2937;
+  line-height: 1.3;
 }
 
 .product-brand-mobile {
   color: #6b7280;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .product-rating-mobile {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .rating-stars-mobile {
@@ -98,39 +108,41 @@
   gap: 0.25rem;
 }
 
-.star-filled {
+.star-filled-mobile {
   color: #f97316;
-  font-size: 1rem;
 }
 
-.star-empty {
+.star-empty-mobile {
   color: #d1d5db;
-  font-size: 1rem;
 }
 
 .rating-value-mobile {
-  margin-left: 0.25rem;
+  margin-left: 0.5rem;
   font-weight: 600;
-  font-size: 0.875rem;
+  color: #1f2937;
 }
 
 .review-count-mobile {
   color: #6b7280;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 }
 
 .product-seller-mobile {
-  padding: 0.75rem;
+  padding: 1rem;
   background-color: #f8f9fa;
   border-radius: 8px;
-  margin-bottom: 1rem;
 }
 
 .seller-info-mobile {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.seller-name-mobile {
+  font-size: 0.875rem;
+  color: #4b5563;
+  font-weight: 500;
 }
 
 .seller-badge-mobile {
@@ -149,14 +161,15 @@
 .product-price-mobile {
   display: flex;
   align-items: baseline;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
 .current-price-mobile {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 600;
   color: #f97316;
+  line-height: 1;
 }
 
 .old-price-mobile {
@@ -166,47 +179,53 @@
 }
 
 .product-variants-mobile {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.variant-section-mobile {
   margin-bottom: 1rem;
 }
 
 .variant-section-mobile h3 {
-  margin-bottom: 0.5rem;
   font-size: 0.875rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #374151;
 }
 
-.color-options-mobile,
-.size-options-mobile {
+.preference-options-mobile {
   display: flex;
-  gap: 0.5rem;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.color-option-mobile,
-.size-option-mobile {
+.preference-option-mobile {
   padding: 0.5rem 0.75rem;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
-  background-color: white;
+  background: white;
   font-size: 0.875rem;
+  color: #4b5563;
   cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 60px;
+  text-align: center;
 }
 
-.color-option-mobile.selected,
-.size-option-mobile.selected {
-  border-color: #f97316;
-  background-color: #fff7ed;
-  color: #f97316;
+.preference-option-mobile:hover {
+  border-color: #666;
+}
+
+.preference-option-mobile.selected {
+  border-color: #ff6b6b;
+  background-color: #fff0f0;
+  color: #ff6b6b;
 }
 
 .product-shipping-mobile {
-  padding: 0.75rem;
+  padding: 1rem;
   background-color: #f8f9fa;
   border-radius: 8px;
-  margin-bottom: 1rem;
 }
 
 .shipping-info-mobile {
@@ -217,84 +236,119 @@
 
 .delivery-time-mobile {
   font-size: 0.875rem;
+  color: #4b5563;
 }
 
 .free-shipping-mobile {
   color: #f97316;
   font-weight: 600;
+}
+
+.product-description-mobile,
+.product-specifications-mobile {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+}
+
+.product-description-mobile h3,
+.product-specifications-mobile h3 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.product-description-mobile p {
   font-size: 0.875rem;
-}
-
-/* Sabit Alt Bar */
-.bottom-bar-mobile {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: white;
-  padding: 1rem;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-}
-
-.bottom-bar-actions {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-.wishlist-button-mobile,
-.share-button-mobile {
-  padding: 0.75rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  background-color: white;
-}
-
-.add-to-cart-mobile {
-  flex: 1;
-  padding: 0.75rem;
-  background-color: #f97316;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-/* Ürün Detayları Accordion */
-.product-details-accordion {
-  padding: 1rem;
-}
-
-.accordion-item {
-  border-bottom: 1px solid #e5e7eb;
-  padding: 1rem 0;
-}
-
-.accordion-item h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+  color: #4b5563;
+  line-height: 1.6;
 }
 
 .specifications-list-mobile {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
 .specification-item-mobile {
   display: flex;
-  justify-content: space-between;
-  font-size: 0.875rem;
+  gap: 1rem;
 }
 
 .spec-label-mobile {
   color: #6b7280;
+  font-weight: 500;
+  min-width: 120px;
+  font-size: 0.875rem;
 }
 
 .spec-value-mobile {
   color: #1f2937;
   font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Product Actions */
+.product-actions-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.add-to-cart-mobile {
+  flex: 1;
+  height: 48px;
+  background-color: #f97316;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-to-cart-mobile:hover {
+  background-color: #ea580c;
+}
+
+.add-to-cart-mobile:active {
+  transform: translateY(1px);
+}
+
+.wishlist-button-mobile,
+.share-button-mobile {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: white;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wishlist-button-mobile:hover,
+.share-button-mobile:hover {
+  border-color: #f97316;
+  color: #f97316;
+}
+
+.wishlist-button-mobile:active,
+.share-button-mobile:active {
+  transform: translateY(1px);
 } 

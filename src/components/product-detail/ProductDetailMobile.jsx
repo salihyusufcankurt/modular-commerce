@@ -1,40 +1,42 @@
-import React, { useState } from 'react';
-import { FiHeart, FiShare2, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import React, { useState, useEffect } from 'react';
+import { FiHeart, FiShare2 } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
 import '../../style/product-detail/ProductDetailMobile.css';
 
 const ProductDetailMobile = ({ product }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [selectedPreferences, setSelectedPreferences] = useState(
-    product.productPreferences.reduce((acc, pref) => ({
-      ...acc,
-      [pref.name]: pref.options[0].name
-    }), {})
-  );
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedPreferences, setSelectedPreferences] = useState({});
+
+  useEffect(() => {
+    if (product?.productPreferences?.length > 0) {
+      const initialPreferences = {};
+      product.productPreferences.forEach(pref => {
+        if (pref.options && pref.options.length > 0) {
+          initialPreferences[pref.name] = pref.options[0].name;
+        }
+      });
+      setSelectedPreferences(initialPreferences);
+    }
+    
+    if (product?.images?.length > 0) {
+      setSelectedImage(product.images[0]);
+    }
+  }, [product]);
 
   const calculateTotalPrice = () => {
-    const basePrice = parseFloat(product.price.base);
-    const oldPrice = parseFloat(product.price.old);
-    const totalModifier = product.productPreferences.reduce((total, pref) => {
-      const selectedOption = pref.options.find(opt => opt.name === selectedPreferences[pref.name]);
-      return total + (selectedOption ? selectedOption.priceModifier : 0);
-    }, 0);
+    if (!product?.price) return { current: "0.00", old: null };
+    
+    const basePrice = parseFloat(product.price.base || 0);
+    const oldPrice = parseFloat(product.price.old || 0);
+    const totalModifier = product.productPreferences?.reduce((total, pref) => {
+      const selectedOption = pref.options?.find(opt => opt.name === selectedPreferences[pref.name]);
+      return total + (selectedOption?.priceModifier || 0);
+    }, 0) || 0;
+
     return {
       current: (basePrice + totalModifier).toFixed(2),
-      old: (oldPrice + totalModifier).toFixed(2)
+      old: oldPrice ? (oldPrice + totalModifier).toFixed(2) : null
     };
-  };
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => 
-      prev === product.images.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => 
-      prev === 0 ? product.images.length - 1 : prev - 1
-    );
   };
 
   const handlePreferenceChange = (preferenceName, optionName) => {
@@ -44,28 +46,36 @@ const ProductDetailMobile = ({ product }) => {
     }));
   };
 
+  if (!product) {
+    return (
+      <div className="product-detail-mobile">
+        <div className="loading">Ürün yükleniyor...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="product-detail-mobile">
-      {/* Görsel Slider */}
-      <div className="image-slider">
-        <button className="slider-button prev" onClick={prevImage}>
-          <FiChevronLeft />
-        </button>
-        <img 
-          src={product.images[currentImageIndex]} 
-          alt={product.title} 
-          className="product-image"
-        />
-        <button className="slider-button next" onClick={nextImage}>
-          <FiChevronRight />
-        </button>
-        <div className="image-dots">
-          {product.images.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${currentImageIndex === index ? 'active' : ''}`}
-              onClick={() => setCurrentImageIndex(index)}
+      {/* Ürün Görselleri */}
+      <div className="product-images-mobile">
+        <div className="main-image-mobile">
+          {selectedImage && (
+            <img 
+              src={selectedImage} 
+              alt={product.title} 
+              className="product-image-mobile"
             />
+          )}
+        </div>
+        <div className="thumbnail-list-mobile">
+          {product.images?.map((image, index) => (
+            <div
+              key={index}
+              className={`thumbnail-mobile ${selectedImage === image ? 'active' : ''}`}
+              onClick={() => setSelectedImage(image)}
+            >
+              <img src={image} alt={`${product.title} - ${index + 1}`} />
+            </div>
           ))}
         </div>
       </div>
@@ -74,88 +84,83 @@ const ProductDetailMobile = ({ product }) => {
       <div className="product-info-mobile">
         <div className="product-header-mobile">
           <h1 className="product-title-mobile">{product.title}</h1>
-          <div className="product-brand-mobile">{product.brand}</div>
-        </div>
-
-        <div className="product-rating-mobile">
-          <div className="rating-stars-mobile">
-            {[...Array(5)].map((_, index) => (
-              <FaStar
-                key={index}
-                className={index < Math.floor(product.rating) ? 'star-filled' : 'star-empty'}
-              />
-            ))}
-            <span className="rating-value-mobile">{product.rating}</span>
-          </div>
-          <div className="review-count-mobile">{product.reviewCount} Değerlendirme</div>
-        </div>
-
-        <div className="product-seller-mobile">
-          <div className="seller-info-mobile">
-            <span className="seller-name-mobile">Satıcı: {product.seller.name}</span>
-            {product.seller.isOfficial && (
-              <span className="seller-badge-mobile">Resmi Satıcı</span>
-            )}
-            <span className="seller-rating-mobile">{product.seller.rating}</span>
+          {product.brand && <div className="product-brand-mobile">{product.brand}</div>}
+          
+          <div className="product-rating-mobile">
+            <div className="rating-stars-mobile">
+              {[...Array(5)].map((_, index) => (
+                <FaStar
+                  key={index}
+                  className={index < Math.floor(product.rating || 0) ? 'star-filled-mobile' : 'star-empty-mobile'}
+                />
+              ))}
+              <span className="rating-value-mobile">{product.rating || 0}</span>
+            </div>
+            <div className="review-count-mobile">{product.reviewCount || 0} Değerlendirme</div>
           </div>
         </div>
+
+        {product.seller && (
+          <div className="product-seller-mobile">
+            <div className="seller-info-mobile">
+              <span className="seller-name-mobile">Satıcı: {product.seller.name}</span>
+              {product.seller.isOfficial && (
+                <span className="seller-badge-mobile">Resmi Satıcı</span>
+              )}
+              <span className="seller-rating-mobile">{product.seller.rating}</span>
+            </div>
+          </div>
+        )}
 
         <div className="product-price-mobile">
           <div className="current-price-mobile">{calculateTotalPrice().current}TL</div>
-          <div className="old-price-mobile">{calculateTotalPrice().old}TL</div>
+          {calculateTotalPrice().old && (
+            <div className="old-price-mobile">{calculateTotalPrice().old}TL</div>
+          )}
         </div>
 
-        <div className="product-variants-mobile">
-          {product.productPreferences.map((preference) => (
-            <div key={preference.name} className="variant-section-mobile">
-              <h3>{preference.name}</h3>
-              <div className="preference-options-mobile">
-                {preference.options.map(option => (
-                  <button
-                    key={option.name}
-                    className={`preference-option-mobile ${selectedPreferences[preference.name] === option.name ? 'selected' : ''}`}
-                    onClick={() => handlePreferenceChange(preference.name, option.name)}
-                  >
-                    {option.name}
-                    {option.priceModifier > 0 && ` (+${option.priceModifier}TL)`}
-                  </button>
-                ))}
+        {product.productPreferences?.length > 0 && (
+          <div className="product-variants-mobile">
+            {product.productPreferences.map((preference) => (
+              <div key={preference.name} className="variant-section-mobile">
+                <h3>{preference.name}</h3>
+                <div className="preference-options-mobile">
+                  {preference.options?.map(option => (
+                    <button
+                      key={option.name}
+                      className={`preference-option-mobile ${selectedPreferences[preference.name] === option.name ? 'selected' : ''}`}
+                      onClick={() => handlePreferenceChange(preference.name, option.name)}
+                    >
+                      {option.name}
+                      {option.priceModifier > 0 && ` (+${option.priceModifier}TL)`}
+                    </button>
+                  ))}
+                </div>
               </div>
+            ))}
+          </div>
+        )}
+
+        {product.shipping && (
+          <div className="product-shipping-mobile">
+            <div className="shipping-info-mobile">
+              <span className="delivery-time-mobile">
+                Tahmini Teslimat: {product.shipping.estimatedDelivery}
+              </span>
+              {product.shipping.isFreeShipping && (
+                <span className="free-shipping-mobile">Ücretsiz Kargo</span>
+              )}
             </div>
-          ))}
+          </div>
+        )}
+
+        <div className="product-description-mobile">
+          <h3>Ürün Açıklaması</h3>
+          <p>{product.description}</p>
         </div>
 
-        <div className="product-shipping-mobile">
-          <div className="shipping-info-mobile">
-            <span className="delivery-time-mobile">
-              Tahmini Teslimat: {product.shipping.estimatedDelivery}
-            </span>
-            {product.shipping.isFreeShipping && (
-              <span className="free-shipping-mobile">Ücretsiz Kargo</span>
-            )}
-          </div>
-        </div>
-
-        {/* Sabit Alt Bar */}
-        <div className="bottom-bar-mobile">
-          <div className="bottom-bar-actions">
-            <button className="wishlist-button-mobile">
-              <FiHeart />
-            </button>
-            <button className="share-button-mobile">
-              <FiShare2 />
-            </button>
-            <button className="add-to-cart-mobile">Sepete Ekle</button>
-          </div>
-        </div>
-
-        {/* Ürün Detayları Accordion */}
-        <div className="product-details-accordion">
-          <div className="accordion-item">
-            <h3>Ürün Açıklaması</h3>
-            <p>{product.description}</p>
-          </div>
-          <div className="accordion-item">
+        {product.specifications && product.specifications.length > 0 && (
+          <div className="product-specifications-mobile">
             <h3>Ürün Özellikleri</h3>
             <div className="specifications-list-mobile">
               {product.specifications.map((spec, index) => (
@@ -166,6 +171,19 @@ const ProductDetailMobile = ({ product }) => {
               ))}
             </div>
           </div>
+        )}
+      </div>
+
+      {/* Sabit Alt Bar */}
+      <div className="bottom-bar-mobile">
+        <div className="bottom-bar-actions-mobile">
+          <button className="wishlist-button-mobile">
+            <FiHeart />
+          </button>
+          <button className="share-button-mobile">
+            <FiShare2 />
+          </button>
+          <button className="add-to-cart-mobile">Sepete Ekle</button>
         </div>
       </div>
     </div>

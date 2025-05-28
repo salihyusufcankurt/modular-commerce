@@ -36,7 +36,7 @@ const ProductList = () => {
   if (loading) {
     return (
       <div className="product-list-page">
-        <div className="container py-4">
+        <div className="container">
           <div className="text-center">Yükleniyor...</div>
         </div>
       </div>
@@ -46,7 +46,7 @@ const ProductList = () => {
   if (error) {
     return (
       <div className="product-list-page">
-        <div className="container py-4">
+        <div className="container">
           <div className="text-center text-danger">{error}</div>
         </div>
       </div>
@@ -56,7 +56,7 @@ const ProductList = () => {
   if (products.length === 0) {
     return (
       <div className="product-list-page">
-        <div className="container py-4">
+        <div className="container">
           <div className="text-center">Bu kategoride ürün bulunamadı.</div>
         </div>
       </div>
@@ -65,21 +65,20 @@ const ProductList = () => {
 
   return (
     <div className="product-list-page">
-      <div className="container py-4">
-        <div className="row g-4">
+      <div className="container">
+        <div className="row">
           {products.map((product) => (
-            <div key={product.id} className="col-6 col-md-4 col-lg-3">
-              <CardWrapper
-                id={product.id}
-                title={product.title}
-                image={product.images[0]}
-                salePrice={product.price.base || product.price.current}
-                oldPrice={product.price.old}
-                rating={product.rating}
-                reviewCount={product.reviewCount}
-                shipping={product.shipping}
-              />
-            </div>
+            <CardWrapper
+              key={product.id}
+              id={product.id}
+              title={product.title}
+              image={product.images[0]}
+              salePrice={product.price.base || product.price.current}
+              oldPrice={product.price.old}
+              rating={product.rating}
+              reviewCount={product.reviewCount}
+              shipping={product.shipping}
+            />
           ))}
         </div>
       </div>

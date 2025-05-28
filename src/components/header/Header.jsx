@@ -58,7 +58,7 @@ const Header = () => {
       </div>
 
       {/* Menü ve Kategoriler */}
-      <nav className="row py-2 border-top border-bottom align-items-center">
+      <nav className="row py-2 border-top align-items-center">
         <div className="col-12 d-flex align-items-center gap-3">
           <FiMenu className="menu-icon" />
           <button className="btn btn-link p-0 text-uppercase small all-categories">
