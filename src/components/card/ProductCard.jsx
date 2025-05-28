@@ -1,8 +1,11 @@
 import React from 'react';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import '../../style/card/ProductCard.css';
 
-const ProductCard = ({ title, image, salePrice, oldPrice, rating = 4.5, reviewCount = 644, freeShipping = true }) => {
+const ProductCard = ({ title, image, salePrice, oldPrice, rating = 4.5, reviewCount = 644, freeShipping = true, id }) => {
+  const navigate = useNavigate();
+
   const renderStars = (rating) => {
     const stars = [];
     const fullStars = Math.floor(rating);
@@ -22,7 +25,9 @@ const ProductCard = ({ title, image, salePrice, oldPrice, rating = 4.5, reviewCo
 
   // Format price with dot for decimals and split into main and decimal parts
   const formatPrice = (price) => {
-    const [main, decimal] = price.toString().split('.');
+    if (!price) return { main: "0", decimal: "00" };
+    const priceStr = typeof price === 'string' ? price : price.toString();
+    const [main, decimal] = priceStr.split('.');
     return {
       main: main.replace(/\B(?=(\d{3})+(?!\d))/g, "."),
       decimal: decimal || "00"
@@ -43,8 +48,12 @@ const ProductCard = ({ title, image, salePrice, oldPrice, rating = 4.5, reviewCo
   const formattedPrice = formatPrice(salePrice);
   const formattedOldPrice = oldPrice ? formatPrice(oldPrice) : null;
 
+  const handleCardClick = () => {
+    navigate(`/products/${id}`);
+  };
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleCardClick}>
       <div className="product-tumb">
         <img src={image} alt={title} />
       </div>

@@ -1,0 +1,457 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Dekoratif Cam Mumluk",
+      "brand": "MaisonBloom",
+      "rating": 4.9,
+      "reviewCount": 17,
+      "seller": {
+        "name": "MaisonBloom",
+        "rating": 9.4,
+        "isOfficial": true
+      },
+      "price": {
+        "base": "119.90",
+        "old": "269.49"
+      },
+      "images": [
+        "https://picsum.photos/id/1/800/800",
+        "https://picsum.photos/id/2/800/800",
+        "https://picsum.photos/id/3/800/800",
+        "https://picsum.photos/id/4/800/800"
+      ],
+      "productPreferences": [
+        {
+          "name": "Renk",
+          "options": [
+            {
+              "name": "Kahverengi",
+              "priceModifier": 0
+            },
+            {
+              "name": "Beyaz",
+              "priceModifier": 10
+            },
+            {
+              "name": "Siyah",
+              "priceModifier": 20
+            }
+          ]
+        },
+        {
+          "name": "Yükseklik",
+          "options": [
+            {
+              "name": "15 cm",
+              "priceModifier": 0
+            },
+            {
+              "name": "20 cm",
+              "priceModifier": 15
+            },
+            {
+              "name": "25 cm",
+              "priceModifier": 30
+            }
+          ]
+        }
+      ],
+      "stock": 50,
+      "description": "Modern tasarımı ve şık görünümüyle evinize zarif bir dokunuş katacak dekoratif cam mumluk. Özel işçilikle üretilen bu mumluk, yüksek kaliteli camdan yapılmıştır.",
+      "specifications": [
+        { "label": "Malzeme", "value": "Cam" },
+        { "label": "Taban Çapı", "value": "10 cm" },
+        { "label": "Ağırlık", "value": "450g" },
+        { "label": "Renk", "value": "Kahverengi" },
+        { "label": "Üretim Yeri", "value": "Türkiye" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Kristal Cam Mumluk",
+      "brand": "MaisonBloom",
+      "rating": 4.7,
+      "reviewCount": 23,
+      "seller": {
+        "name": "MaisonBloom",
+        "rating": 9.4,
+        "isOfficial": true
+      },
+      "price": {
+        "base": "149.90",
+        "old": "299.49"
+      },
+      "images": [
+        "https://picsum.photos/id/20/800/800",
+        "https://picsum.photos/id/21/800/800",
+        "https://picsum.photos/id/22/800/800",
+        "https://picsum.photos/id/23/800/800"
+      ],
+      "productPreferences": [
+        {
+          "name": "Renk",
+          "options": [
+            {
+              "name": "Şeffaf",
+              "priceModifier": 0
+            },
+            {
+              "name": "Mavi",
+              "priceModifier": 10
+            },
+            {
+              "name": "Yeşil",
+              "priceModifier": 20
+            }
+          ]
+        },
+        {
+          "name": "Yükseklik",
+          "options": [
+            {
+              "name": "18 cm",
+              "priceModifier": 0
+            },
+            {
+              "name": "23 cm",
+              "priceModifier": 15
+            },
+            {
+              "name": "28 cm",
+              "priceModifier": 30
+            }
+          ]
+        },
+        {
+          "name": "Desen",
+          "options": [
+            {
+              "name": "Sade",
+              "priceModifier": 0
+            },
+            {
+              "name": "Çiçekli",
+              "priceModifier": 15
+            },
+            {
+              "name": "Geometrik",
+              "priceModifier": 25
+            }
+          ]
+        }
+      ],
+      "stock": 35,
+      "description": "Kristal cam mumluk, sofistike tasarımı ile mekanınıza lüks bir dokunuş katacak. El işçiliği ile üretilen bu özel parça, ışığı muhteşem şekilde yansıtır.",
+      "specifications": [
+        { "label": "Malzeme", "value": "Kristal Cam" },
+        { "label": "Taban Çapı", "value": "12 cm" },
+        { "label": "Ağırlık", "value": "750g" },
+        { "label": "Renk", "value": "Şeffaf" },
+        { "label": "Üretim Yeri", "value": "Türkiye" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Vintage Mumluk",
+      "brand": "MaisonBloom",
+      "rating": 4.8,
+      "reviewCount": 42,
+      "seller": {
+        "name": "MaisonBloom",
+        "rating": 9.4,
+        "isOfficial": true
+      },
+      "price": {
+        "base": "199.90",
+        "old": "399.49"
+      },
+      "images": [
+        "https://picsum.photos/id/30/800/800",
+        "https://picsum.photos/id/31/800/800",
+        "https://picsum.photos/id/32/800/800",
+        "https://picsum.photos/id/33/800/800"
+      ],
+      "productPreferences": [
+        {
+          "name": "Renk",
+          "options": [
+            {
+              "name": "Altın",
+              "priceModifier": 0
+            },
+            {
+              "name": "Gümüş",
+              "priceModifier": 10
+            },
+            {
+              "name": "Bronz",
+              "priceModifier": 20
+            }
+          ]
+        },
+        {
+          "name": "Yükseklik",
+          "options": [
+            {
+              "name": "20 cm",
+              "priceModifier": 0
+            },
+            {
+              "name": "25 cm",
+              "priceModifier": 15
+            },
+            {
+              "name": "30 cm",
+              "priceModifier": 30
+            }
+          ]
+        }
+      ],
+      "stock": 25,
+      "description": "Vintage tarzda tasarlanmış bu mumluk, klasik dekorasyonunuza mükemmel uyum sağlayacak. Antik görünümlü metal detayları ile göz alıcı bir görünüme sahip.",
+      "specifications": [
+        { "label": "Malzeme", "value": "Metal ve Cam" },
+        { "label": "Taban Çapı", "value": "15 cm" },
+        { "label": "Ağırlık", "value": "850g" },
+        { "label": "Renk", "value": "Altın" },
+        { "label": "Üretim Yeri", "value": "Türkiye" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Modern LED Mumluk",
+      "brand": "MaisonBloom",
+      "rating": 4.6,
+      "reviewCount": 31,
+      "seller": {
+        "name": "MaisonBloom",
+        "rating": 9.4,
+        "isOfficial": true
+      },
+      "price": {
+        "base": "179.90",
+        "old": "359.49"
+      },
+      "images": [
+        "https://picsum.photos/id/40/800/800",
+        "https://picsum.photos/id/41/800/800",
+        "https://picsum.photos/id/42/800/800",
+        "https://picsum.photos/id/43/800/800"
+      ],
+      "productPreferences": [
+        {
+          "name": "Renk",
+          "options": [
+            {
+              "name": "Beyaz",
+              "priceModifier": 0
+            },
+            {
+              "name": "Siyah",
+              "priceModifier": 10
+            },
+            {
+              "name": "Rose Gold",
+              "priceModifier": 20
+            }
+          ]
+        },
+        {
+          "name": "Yükseklik",
+          "options": [
+            {
+              "name": "16 cm",
+              "priceModifier": 0
+            },
+            {
+              "name": "22 cm",
+              "priceModifier": 15
+            },
+            {
+              "name": "28 cm",
+              "priceModifier": 30
+            }
+          ]
+        },
+        {
+          "name": "Işık Modu",
+          "options": [
+            {
+              "name": "Sıcak Beyaz",
+              "priceModifier": 0
+            },
+            {
+              "name": "Soğuk Beyaz",
+              "priceModifier": 5
+            },
+            {
+              "name": "RGB",
+              "priceModifier": 15
+            }
+          ]
+        }
+      ],
+      "stock": 40,
+      "description": "Modern LED aydınlatmalı mumluk, teknoloji ve estetiği bir araya getiriyor. USB şarj edilebilir özelliği ve 3 farklı ışık modu ile ambiyansınızı dilediğiniz gibi ayarlayın.",
+      "specifications": [
+        { "label": "Malzeme", "value": "Akrilik ve Metal" },
+        { "label": "Taban Çapı", "value": "12 cm" },
+        { "label": "Pil Ömrü", "value": "8 saat" },
+        { "label": "Renk", "value": "Beyaz" },
+        { "label": "Üretim Yeri", "value": "Türkiye" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Seramik Mumluk Set",
+      "brand": "MaisonBloom",
+      "rating": 4.9,
+      "reviewCount": 56,
+      "seller": {
+        "name": "MaisonBloom",
+        "rating": 9.4,
+        "isOfficial": true
+      },
+      "price": {
+        "base": "229.90",
+        "old": "459.49"
+      },
+      "images": [
+        "https://picsum.photos/id/50/800/800",
+        "https://picsum.photos/id/51/800/800",
+        "https://picsum.photos/id/52/800/800",
+        "https://picsum.photos/id/53/800/800"
+      ],
+      "productPreferences": [
+        {
+          "name": "Renk",
+          "options": [
+            {
+              "name": "Krem",
+              "priceModifier": 0
+            },
+            {
+              "name": "Gri",
+              "priceModifier": 10
+            },
+            {
+              "name": "Turkuaz",
+              "priceModifier": 20
+            }
+          ]
+        },
+        {
+          "name": "Yükseklik",
+          "options": [
+            {
+              "name": "12 cm",
+              "priceModifier": 0
+            },
+            {
+              "name": "16 cm",
+              "priceModifier": 15
+            },
+            {
+              "name": "20 cm",
+              "priceModifier": 30
+            }
+          ]
+        }
+      ],
+      "stock": 15,
+      "description": "3'lü seramik mumluk seti, el yapımı desenler ve özel sırlama tekniği ile üretilmiştir. Her biri benzersiz desenlere sahip bu set, evinizin farklı köşelerinde kullanılabilir.",
+      "specifications": [
+        { "label": "Malzeme", "value": "Seramik" },
+        { "label": "Set İçeriği", "value": "3 Parça" },
+        { "label": "Ağırlık", "value": "1200g" },
+        { "label": "Renk", "value": "Krem" },
+        { "label": "Üretim Yeri", "value": "Türkiye" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Mermer Mumluk",
+      "brand": "MaisonBloom",
+      "rating": 4.7,
+      "reviewCount": 28,
+      "seller": {
+        "name": "MaisonBloom",
+        "rating": 9.4,
+        "isOfficial": true
+      },
+      "price": {
+        "base": "299.90",
+        "old": "599.49"
+      },
+      "images": [
+        "https://picsum.photos/id/60/800/800",
+        "https://picsum.photos/id/61/800/800",
+        "https://picsum.photos/id/62/800/800",
+        "https://picsum.photos/id/63/800/800"
+      ],
+      "productPreferences": [
+        {
+          "name": "Renk",
+          "options": [
+            {
+              "name": "Beyaz Mermer",
+              "priceModifier": 0
+            },
+            {
+              "name": "Siyah Mermer",
+              "priceModifier": 10
+            },
+            {
+              "name": "Gri Mermer",
+              "priceModifier": 20
+            }
+          ]
+        },
+        {
+          "name": "Yükseklik",
+          "options": [
+            {
+              "name": "14 cm",
+              "priceModifier": 0
+            },
+            {
+              "name": "18 cm",
+              "priceModifier": 15
+            },
+            {
+              "name": "22 cm",
+              "priceModifier": 30
+            }
+          ]
+        },
+        {
+          "name": "Mermer Deseni",
+          "options": [
+            {
+              "name": "Calacatta",
+              "priceModifier": 0
+            },
+            {
+              "name": "Carrara",
+              "priceModifier": 20
+            },
+            {
+              "name": "Emperador",
+              "priceModifier": 40
+            }
+          ]
+        }
+      ],
+      "stock": 20,
+      "description": "Doğal mermerden üretilen bu mumluk, lüks ve dayanıklılığı bir arada sunuyor. Her biri benzersiz damarlara sahip olan bu parçalar, evinize sofistike bir dokunuş katacak.",
+      "specifications": [
+        { "label": "Malzeme", "value": "Doğal Mermer" },
+        { "label": "Taban Çapı", "value": "14 cm" },
+        { "label": "Ağırlık", "value": "1500g" },
+        { "label": "Renk", "value": "Beyaz Mermer" },
+        { "label": "Üretim Yeri", "value": "Türkiye" }
+      ]
+    }
+  ]
+} 
