@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FiHeart, FiShare2 } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
-import '../../style/product-detail/ProductDetailMobile.css';
+import './ProductDetailMobile.scss';
 
-const ProductDetailMobile = ({ product }) => {
+const ProductDetailMobileView = ({ product }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedPreferences, setSelectedPreferences] = useState({});
 
@@ -190,4 +190,4 @@ const ProductDetailMobile = ({ product }) => {
   );
 };
 
-export default ProductDetailMobile; 
+export default ProductDetailMobileView; 

@@ -101,18 +101,13 @@
         }
       ],
       "stock": 50,
-      "description": "Modern tasarımı ve şık görünümüyle evinize zarif bir dokunuş katacak dekoratif cam mumluk. Özel işçilikle üretilen bu mumluk, yüksek kaliteli camdan yapılmıştır. Farklı renk ve boyut seçenekleriyle her tarza uyum sağlar. Mumlarınızı güvenle yakabilmeniz için özel olarak tasarlanmış taban yapısına sahiptir.",
+      "description": "Modern tasarımı ve şık görünümüyle evinize zarif bir dokunuş katacak dekoratif cam mumluk. Özel işçilikle üretilen bu mumluk, yüksek kaliteli camdan yapılmıştır.",
       "specifications": [
-        { "label": "Malzeme", "value": "Premium Cam" },
+        { "label": "Malzeme", "value": "Cam" },
         { "label": "Taban Çapı", "value": "10 cm" },
         { "label": "Ağırlık", "value": "450g" },
         { "label": "Renk", "value": "Kahverengi" },
-        { "label": "Üretim Yeri", "value": "Türkiye" },
-        { "label": "Paket İçeriği", "value": "1 Adet Mumluk" },
-        { "label": "Garanti", "value": "2 Yıl" },
-        { "label": "Kullanım Alanı", "value": "İç Mekan" },
-        { "label": "Bakım", "value": "Nemli Bezle Silinebilir" },
-        { "label": "Özellikler", "value": "Isıya Dayanıklı, Çizilmez" }
+        { "label": "Üretim Yeri", "value": "Türkiye" }
       ],
       "sellCount": 1250,
       "shipping": {
@@ -196,23 +191,18 @@
         }
       ],
       "stock": 35,
-      "description": "Kristal cam mumluk, sofistike tasarımı ile mekanınıza lüks bir dokunuş katacak. El işçiliği ile üretilen bu özel parça, ışığı muhteşem şekilde yansıtır. Özel kesim tekniği sayesinde ışığı kırarak etkileyici bir ambiyans yaratır. Her biri el yapımı olduğu için benzersiz desenlere sahiptir.",
+      "description": "Kristal cam mumluk, sofistike tasarımı ile mekanınıza lüks bir dokunuş katacak. El işçiliği ile üretilen bu özel parça, ışığı muhteşem şekilde yansıtır.",
       "specifications": [
-        { "label": "Malzeme", "value": "Premium Kristal Cam" },
+        { "label": "Malzeme", "value": "Kristal Cam" },
         { "label": "Taban Çapı", "value": "12 cm" },
         { "label": "Ağırlık", "value": "750g" },
         { "label": "Renk", "value": "Şeffaf" },
-        { "label": "Üretim Yeri", "value": "Türkiye" },
-        { "label": "Paket İçeriği", "value": "1 Adet Kristal Mumluk" },
-        { "label": "Garanti", "value": "2 Yıl" },
-        { "label": "Kullanım Alanı", "value": "İç Mekan" },
-        { "label": "Bakım", "value": "Özel Cam Temizleyici ile Silinebilir" },
-        { "label": "Özellikler", "value": "El İşçiliği, Özel Kesim" }
+        { "label": "Üretim Yeri", "value": "Türkiye" }
       ],
-      "sellCount": 890,
+      "sellCount": 856,
       "shipping": {
-        "isFreeShipping": true,
-        "estimatedDelivery": "2-3 iş günü"
+        "isFreeShipping": false,
+        "estimatedDelivery": "3-4 iş günü"
       }
     },
     {

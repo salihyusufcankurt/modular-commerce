@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu, FiSearch, FiUser, FiHeart, FiShoppingCart } from 'react-icons/fi';
-import '../../style/header/Header.css';
+import { FaShoppingCart } from 'react-icons/fa';
+import { getCartItemCount } from '../../services/cart/cartService';
+import './Header.scss';
 
 const Header = () => {
   const categories = [

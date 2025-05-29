@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu, FiSearch, FiUser, FiHeart, FiShoppingCart } from 'react-icons/fi';
-import '../../style/header/HeaderMobile.css';
+import './HeaderMobile.scss';
 
 const HeaderMobile = () => {
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaChevronDown } from 'react-icons/fa';
-import '../../style/footer/FooterMobile.css';
+import './FooterMobile.scss';
 
 const FooterMobile = () => {
   const [openSection, setOpenSection] = useState(null);

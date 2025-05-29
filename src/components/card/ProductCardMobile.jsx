@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import '../../style/card/ProductCardMobile.css';
+import './ProductCardMobile.scss';
 
 const ProductCardMobile = ({ 
   title, 

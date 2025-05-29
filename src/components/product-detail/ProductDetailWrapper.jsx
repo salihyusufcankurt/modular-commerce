@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ProductDetail from './ProductDetail';
-import ProductDetailMobile from './ProductDetailMobile';
+import ProductDetailView from './ProductDetail';
+import ProductDetailMobileView from './ProductDetailMobile';
 
 const ProductDetailWrapper = ({ product }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
@@ -15,9 +15,9 @@ const ProductDetailWrapper = ({ product }) => {
   }, []);
 
   return isMobile ? (
-    <ProductDetailMobile product={product} />
+    <ProductDetailMobileView product={product} />
   ) : (
-    <ProductDetail product={product} />
+    <ProductDetailView product={product} />
   );
 };
 

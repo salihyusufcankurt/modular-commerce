@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FiHeart, FiShare2 } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
-import '../../style/product-detail/ProductDetail.css';
+import './ProductDetail.scss';
 
-const ProductDetail = ({ product }) => {
+const ProductDetailView = ({ product }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedPreferences, setSelectedPreferences] = useState({});
 
@@ -11,13 +11,13 @@ const ProductDetail = ({ product }) => {
     if (product?.images?.length > 0) {
       setSelectedImage(product.images[0]);
     }
+
     if (product?.productPreferences?.length > 0) {
-      setSelectedPreferences(
-        product.productPreferences.reduce((acc, pref) => ({
-          ...acc,
-          [pref.name]: pref.options[0].name
-        }), {})
-      );
+      const initialPreferences = product.productPreferences.reduce((acc, pref) => ({
+        ...acc,
+        [pref.name]: pref.options[0]?.name || ''
+      }), {});
+      setSelectedPreferences(initialPreferences);
     }
   }, [product]);
 
@@ -36,9 +36,10 @@ const ProductDetail = ({ product }) => {
       const selectedOption = pref.options?.find(opt => opt.name === selectedPreferences[pref.name]);
       return total + (selectedOption?.priceModifier || 0);
     }, 0) || 0;
+    
     return {
       current: (basePrice + totalModifier).toFixed(2),
-      old: oldPrice ? (oldPrice + totalModifier).toFixed(2) : null
+      old: (oldPrice + totalModifier).toFixed(2)
     };
   };
 
@@ -53,7 +54,10 @@ const ProductDetail = ({ product }) => {
     <div className="product-detail">
       {/* Sol Taraf - Ürün Görselleri */}
       <div className="product-images">
-        <div className="thumbnail-list">
+        <div className="main-image">
+          <img src={selectedImage} alt={product.title} />
+        </div>
+        <div className="thumbnail-images">
           {product.images?.map((image, index) => (
             <div
               key={index}
@@ -64,11 +68,6 @@ const ProductDetail = ({ product }) => {
             </div>
           ))}
         </div>
-        {selectedImage && (
-          <div className="main-image">
-            <img src={selectedImage} alt={product.title} />
-          </div>
-        )}
       </div>
 
       {/* Sağ Taraf - Ürün Bilgileri */}
@@ -103,7 +102,7 @@ const ProductDetail = ({ product }) => {
 
         <div className="product-price">
           <div className="current-price">{calculateTotalPrice().current}TL</div>
-          {calculateTotalPrice().old && (
+          {calculateTotalPrice().old !== "0.00" && (
             <div className="old-price">{calculateTotalPrice().old}TL</div>
           )}
         </div>
@@ -140,12 +139,27 @@ const ProductDetail = ({ product }) => {
           </button>
         </div>
 
-        <div className="product-description">
-          <h3>Ürün Açıklaması</h3>
-          <p>{product.description}</p>
-        </div>
+        {product.shipping && (
+          <div className="product-shipping">
+            <div className="shipping-info">
+              {product.shipping.isFreeShipping && (
+                <span className="free-shipping">Ücretsiz Kargo</span>
+              )}
+              <span className="delivery-date">
+                Tahmini Teslimat: {product.shipping.estimatedDelivery}
+              </span>
+            </div>
+          </div>
+        )}
 
-        {product.specifications && product.specifications.length > 0 && (
+        {product.description && (
+          <div className="product-description">
+            <h3>Ürün Açıklaması</h3>
+            <p>{product.description}</p>
+          </div>
+        )}
+
+        {product.specifications?.length > 0 && (
           <div className="product-specifications">
             <h3>Ürün Özellikleri</h3>
             <div className="specifications-list">
@@ -163,4 +177,4 @@ const ProductDetail = ({ product }) => {
   );
 };
 
-export default ProductDetail; 
+export default ProductDetailView; 

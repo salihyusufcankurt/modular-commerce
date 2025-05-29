@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import ProductDetailWrapper from '../components/product-detail/ProductDetailWrapper';
-import { getProductById } from '../services/product/productService';
-import '../style/pages/ProductDetail.css';
+import ProductDetailWrapper from '../../components/product-detail/ProductDetailWrapper';
+import { getProductById } from '../../services/product/productService';
+import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -80,4 +80,4 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+export default ProductDetail; 

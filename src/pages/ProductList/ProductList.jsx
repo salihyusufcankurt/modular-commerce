@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import CardWrapper from '../components/card/CardWrapper';
-import { getProducts } from '../services/product/productService';
-import '../style/pages/ProductList.css';
+import CardWrapper from '../../components/card/CardWrapper';
+import { getProducts } from '../../services/product/productService';
+import './ProductList.scss';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);

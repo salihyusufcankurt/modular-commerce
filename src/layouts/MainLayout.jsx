@@ -2,7 +2,7 @@ import React from 'react';
 import HeaderWrapper from '../components/header/HeaderWrapper';
 import FooterWrapper from '../components/footer/FooterWrapper';
 import { Outlet } from 'react-router-dom';
-import '../style/layouts/MainLayout.css';
+import './MainLayout.scss';
 
 const MainLayout = () => {
   return (

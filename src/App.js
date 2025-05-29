@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
-import ProductList from './pages/ProductList';
-import ProductDetail from './pages/ProductDetail';
-import './style/layouts/MainLayout.css';
+import ProductList from './pages/ProductList/ProductList';
+import ProductDetail from './pages/ProductDetail/ProductDetail';
+import './App.scss';
 
 function App() {
   return (

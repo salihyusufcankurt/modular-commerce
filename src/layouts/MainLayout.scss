@@ -1,0 +1,243 @@
+/* Layout Variables */
+:root {
+  --max-width: 1200px;
+  --header-height: 140px;
+  --footer-height: auto;
+  --side-padding: 1rem;
+  --container-padding: 1rem;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #f8f9fa;
+}
+
+/* Base Layout */
+.layout-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container System */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Ana Grid Yapısı */
+.app-grid {
+  display: grid;
+  grid-template-columns: 
+    [full-start] minmax(var(--side-padding), 1fr)
+    [main-start] min(100% - (var(--side-padding) * 2), var(--max-width))
+    [main-end] minmax(var(--side-padding), 1fr)
+    [full-end];
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Header */
+.header {
+  grid-column: full-start / full-end;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  min-height: var(--header-height);
+  display: grid;
+  grid-template-columns: inherit;
+
+  > * {
+    grid-column: main-start / main-end;
+    width: 100%;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &-top {
+    // Styles if needed
+  }
+
+  &-bottom {
+    padding: 0.75rem 0;
+  }
+}
+
+/* Main Content */
+.main-content {
+  grid-column: full-start / full-end;
+  background: #f8f9fa;
+  display: grid;
+  grid-template-columns: inherit;
+  padding: 2rem 0;
+
+  > * {
+    grid-column: main-start / main-end;
+    width: 100%;
+  }
+}
+
+/* Footer */
+.footer {
+  grid-column: full-start / full-end;
+  background: #f8f9fa;
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: inherit;
+
+  > * {
+    grid-column: main-start / main-end;
+    width: 100%;
+  }
+
+  &-content {
+    display: grid;
+    gap: 2rem;
+  }
+
+  h5 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+
+      a {
+        color: #666;
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+
+  a {
+    color: #666;
+    font-size: 1.25rem;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #333;
+    }
+  }
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+/* Responsive Grid Columns */
+.col {
+  &-12 { grid-column: span 12; }
+  &-6 { grid-column: span 6; }
+  &-4 { grid-column: span 4; }
+  &-3 { grid-column: span 3; }
+  &-2 { grid-column: span 2; }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+  :root {
+    --max-width: 1140px;
+  }
+
+  .col-lg {
+    &-12 { grid-column: span 12; }
+    &-6 { grid-column: span 6; }
+    &-4 { grid-column: span 4; }
+    &-3 { grid-column: span 3; }
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --max-width: 960px;
+  }
+
+  .col-md {
+    &-12 { grid-column: span 12; }
+    &-6 { grid-column: span 6; }
+    &-4 { grid-column: span 4; }
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --max-width: 720px;
+    --header-height: 120px;
+  }
+
+  .col-sm {
+    &-12 { grid-column: span 12; }
+    &-6 { grid-column: span 6; }
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --max-width: 540px;
+    --header-height: 100px;
+    --side-padding: 0.75rem;
+    --container-padding: 0.75rem;
+  }
+
+  .col-xs {
+    &-12 { grid-column: span 12; }
+  }
+}
+
+/* Utility Classes */
+.content {
+  &-sm { max-width: 640px; }
+  &-md { max-width: 768px; }
+  &-lg { max-width: 992px; }
+  &-xl { max-width: 1200px; }
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+} 

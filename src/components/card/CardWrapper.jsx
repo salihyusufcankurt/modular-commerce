@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
 import ProductCardMobile from './ProductCardMobile';
-import '../../style/card/CardWrapper.css';
+import './CardWrapper.scss';
 
 const CardWrapper = (props) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);

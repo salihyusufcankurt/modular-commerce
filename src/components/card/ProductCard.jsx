@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import '../../style/card/ProductCard.css';
+import './ProductCard.scss';
 
 const ProductCard = ({ 
   title, 

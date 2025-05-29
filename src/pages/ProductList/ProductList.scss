@@ -1,0 +1,83 @@
+/* Custom gutter control */
+:root {
+  --gutter-x: 10px;
+  --gutter-y: 10px;
+}
+
+.product-list-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+  overflow-x: hidden;
+
+  /* Override Bootstrap gutter */
+  .g-custom {
+    --bs-gutter-x: var(--gutter-x);
+    --bs-gutter-y: var(--gutter-y);
+    margin-right: calc(var(--gutter-x) * -0.5);
+    margin-left: calc(var(--gutter-x) * -0.5);
+    margin-top: 0;
+  }
+
+  /* Container override */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  /* Grid System */
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  /* Scrollbar styles */
+  &::-webkit-scrollbar {
+    width: 8px;
+
+    &-track {
+      background: #f1f1f1;
+    }
+
+    &-thumb {
+      background: #fbb72c;
+      border-radius: 4px;
+
+      &:hover {
+        background: #e9a922;
+      }
+    }
+  }
+
+  /* Responsive Grid */
+  @media (min-width: 1200px) {
+    .row {
+      grid-template-columns: repeat(4, minmax(280px, 1fr));
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .row {
+      grid-template-columns: repeat(3, minmax(280px, 1fr));
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .row {
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+    }
+  }
+
+  @media (max-width: 767px) {
+    .row {
+      grid-template-columns: repeat(1, minmax(280px, 1fr));
+    }
+    .container {
+      padding: 0 0.75rem;
+    }
+  }
+} 

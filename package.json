@@ -44,6 +44,7 @@
   "devDependencies": {
     "https-browserify": "^1.0.0",
     "json-server": "^1.0.0-beta.3",
+    "sass": "^1.89.0",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0"
   }
