@@ -3,16 +3,22 @@
 .product-card {
   width: 100%;
   background: white;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
   cursor: pointer;
   margin: 0;
+  border: 1px solid #eee;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+
+    .addButton {
+      background-color: #ff6b00;
+      color: white;
+    }
   }
 
   .product-tumb {
@@ -103,21 +109,56 @@
     }
   }
 
+  .addButton {
+    width: 100%;
+    background-color: #ff6b00;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 20px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    svg {
+      font-size: 18px;
+    }
+  }
+
   .card-bottom-field {
     width: 100%;
-    padding: 0 16px 16px;
+    padding: 12px 16px 16px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
 
     .card-price-field {
       display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 4px;
 
       .price-row {
         display: flex;
         align-items: center;
+        margin-bottom: 4px;
 
         .product-sale-price {
           color: #1c1c1c;
@@ -127,25 +168,25 @@
           line-height: 1;
 
           .price-main {
-            font-size: 24px;
-            font-weight: 500;
+            font-size: 26px;
+            font-weight: 600;
             letter-spacing: -0.3px;
           }
 
           .price-decimal {
-            font-size: 11px;
-            font-weight: 400;
+            font-size: 12px;
+            font-weight: 500;
             position: absolute;
             top: 2px;
-            right: -16px;
+            right: -18px;
           }
 
           .price-currency {
-            font-size: 11px;
-            font-weight: 400;
+            font-size: 12px;
+            font-weight: 500;
             position: absolute;
             top: 2px;
-            right: -28px;
+            right: -32px;
           }
         }
       }
@@ -153,45 +194,19 @@
 
     .free-shipping {
       font-family: 'Roboto', sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       color: #00a650;
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: 0.2px;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
+      margin-top: 2px;
 
       .delivery-date {
         color: #767676;
+        font-weight: 400;
       }
-    }
-  }
-
-  .addButton {
-    width: fit-content;
-    min-width: 90px;
-    background-color: #ffe707;
-    border: none;
-    border-radius: 20px;
-    color: #1c1c1c;
-    font-family: 'Roboto', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    padding: 0 16px;
-    height: 32px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-      background-color: #ffd900;
-    }
-
-    &:active {
-      transform: translateY(1px);
     }
   }
 } 
