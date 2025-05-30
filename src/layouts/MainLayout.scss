@@ -83,10 +83,27 @@ body.mini-cart-open {
   min-height: var(--header-height);
   display: grid;
   grid-template-columns: inherit;
+  position: relative;
+
+  // Sağ taraf için beyaz alan genişletme
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100%;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 1;
+    pointer-events: none;
+  }
 
   > * {
     grid-column: main-start / main-end;
     width: 100%;
+    position: relative;
+    z-index: 2;
   }
 
   &-container {
