@@ -80,4 +80,33 @@
       padding: 0 0.75rem;
     }
   }
+}
+
+/* Mini Cart Açık Olduğunda Grid Ayarlaması */
+body.mini-cart-open .product-list-page {
+  
+  /* Responsive Grid - Mini Cart açık */
+  @media (min-width: 1200px) {
+    .row {
+      grid-template-columns: repeat(3, minmax(280px, 1fr));
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .row {
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .row {
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+    }
+  }
+
+  @media (max-width: 767px) {
+    .row {
+      grid-template-columns: repeat(1, minmax(280px, 1fr));
+    }
+  }
 } 

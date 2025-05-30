@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu, FiSearch, FiUser, FiHeart, FiShoppingCart } from 'react-icons/fi';
-import { FaShoppingCart } from 'react-icons/fa';
-import { getCartItemCount } from '../../services/cart/cartService';
+import { useCart } from '../../context/CartContext';
 import './Header.scss';
 
 const Header = () => {
+  const { cartItemCount, openMiniCart } = useCart();
+
   const categories = [
     { id: 'kadin', name: 'Kadın' },
     { id: 'erkek', name: 'Erkek' },
@@ -16,6 +17,11 @@ const Header = () => {
     { id: 'cok-satanlar', name: 'Çok Satanlar' },
     { id: 'flas-urunler', name: 'Flaş Ürünler' }
   ];
+
+  const handleCartClick = (e) => {
+    e.preventDefault();
+    openMiniCart();
+  };
 
   return (
     <header className="container">
@@ -52,8 +58,15 @@ const Header = () => {
             <FiHeart size={20} />
             <span>Favorilerim</span>
           </div>
-          <div className="text-center small d-flex flex-column align-items-center">
+          <div 
+            className="text-center small d-flex flex-column align-items-center position-relative"
+            onClick={handleCartClick}
+            style={{ cursor: 'pointer' }}
+          >
             <FiShoppingCart size={20} />
+            {cartItemCount > 0 && (
+              <span className="cart-count">{cartItemCount}</span>
+            )}
             <span>Sepetim</span>
           </div>
         </div>

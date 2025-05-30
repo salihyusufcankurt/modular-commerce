@@ -43,9 +43,12 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Dekoratif Cam Mumluk",
-      "categories": ["ev-yasam", "cok-satanlar"],
+      "categories": [
+        "ev-yasam",
+        "cok-satanlar"
+      ],
       "brand": "MaisonBloom",
       "rating": 4.9,
       "reviewCount": 17,
@@ -103,11 +106,26 @@
       "stock": 50,
       "description": "Modern tasarımı ve şık görünümüyle evinize zarif bir dokunuş katacak dekoratif cam mumluk. Özel işçilikle üretilen bu mumluk, yüksek kaliteli camdan yapılmıştır.",
       "specifications": [
-        { "label": "Malzeme", "value": "Cam" },
-        { "label": "Taban Çapı", "value": "10 cm" },
-        { "label": "Ağırlık", "value": "450g" },
-        { "label": "Renk", "value": "Kahverengi" },
-        { "label": "Üretim Yeri", "value": "Türkiye" }
+        {
+          "label": "Malzeme",
+          "value": "Cam"
+        },
+        {
+          "label": "Taban Çapı",
+          "value": "10 cm"
+        },
+        {
+          "label": "Ağırlık",
+          "value": "450g"
+        },
+        {
+          "label": "Renk",
+          "value": "Kahverengi"
+        },
+        {
+          "label": "Üretim Yeri",
+          "value": "Türkiye"
+        }
       ],
       "sellCount": 1250,
       "shipping": {
@@ -116,9 +134,11 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Kristal Cam Mumluk",
-      "categories": ["ev-yasam"],
+      "categories": [
+        "ev-yasam"
+      ],
       "brand": "MaisonBloom",
       "rating": 4.7,
       "reviewCount": 23,
@@ -193,11 +213,26 @@
       "stock": 35,
       "description": "Kristal cam mumluk, sofistike tasarımı ile mekanınıza lüks bir dokunuş katacak. El işçiliği ile üretilen bu özel parça, ışığı muhteşem şekilde yansıtır.",
       "specifications": [
-        { "label": "Malzeme", "value": "Kristal Cam" },
-        { "label": "Taban Çapı", "value": "12 cm" },
-        { "label": "Ağırlık", "value": "750g" },
-        { "label": "Renk", "value": "Şeffaf" },
-        { "label": "Üretim Yeri", "value": "Türkiye" }
+        {
+          "label": "Malzeme",
+          "value": "Kristal Cam"
+        },
+        {
+          "label": "Taban Çapı",
+          "value": "12 cm"
+        },
+        {
+          "label": "Ağırlık",
+          "value": "750g"
+        },
+        {
+          "label": "Renk",
+          "value": "Şeffaf"
+        },
+        {
+          "label": "Üretim Yeri",
+          "value": "Türkiye"
+        }
       ],
       "sellCount": 856,
       "shipping": {
@@ -206,9 +241,12 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Vintage Mumluk",
-      "categories": ["ev-yasam", "flas-urunler"],
+      "categories": [
+        "ev-yasam",
+        "flas-urunler"
+      ],
       "brand": "MaisonBloom",
       "rating": 4.8,
       "reviewCount": 42,
@@ -266,11 +304,26 @@
       "stock": 25,
       "description": "Vintage tarzda tasarlanmış bu mumluk, klasik dekorasyonunuza mükemmel uyum sağlayacak. Antik görünümlü metal detayları ile göz alıcı bir görünüme sahip.",
       "specifications": [
-        { "label": "Malzeme", "value": "Metal ve Cam" },
-        { "label": "Taban Çapı", "value": "15 cm" },
-        { "label": "Ağırlık", "value": "850g" },
-        { "label": "Renk", "value": "Altın" },
-        { "label": "Üretim Yeri", "value": "Türkiye" }
+        {
+          "label": "Malzeme",
+          "value": "Metal ve Cam"
+        },
+        {
+          "label": "Taban Çapı",
+          "value": "15 cm"
+        },
+        {
+          "label": "Ağırlık",
+          "value": "850g"
+        },
+        {
+          "label": "Renk",
+          "value": "Altın"
+        },
+        {
+          "label": "Üretim Yeri",
+          "value": "Türkiye"
+        }
       ],
       "sellCount": 945,
       "shipping": {
@@ -279,9 +332,12 @@
       }
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Modern LED Mumluk",
-      "categories": ["ev-yasam", "supermarket"],
+      "categories": [
+        "ev-yasam",
+        "supermarket"
+      ],
       "brand": "MaisonBloom",
       "rating": 4.6,
       "reviewCount": 31,
@@ -356,11 +412,26 @@
       "stock": 40,
       "description": "Modern LED aydınlatmalı mumluk, teknoloji ve estetiği bir araya getiriyor. USB şarj edilebilir özelliği ve 3 farklı ışık modu ile ambiyansınızı dilediğiniz gibi ayarlayın.",
       "specifications": [
-        { "label": "Malzeme", "value": "Akrilik ve Metal" },
-        { "label": "Taban Çapı", "value": "12 cm" },
-        { "label": "Pil Ömrü", "value": "8 saat" },
-        { "label": "Renk", "value": "Beyaz" },
-        { "label": "Üretim Yeri", "value": "Türkiye" }
+        {
+          "label": "Malzeme",
+          "value": "Akrilik ve Metal"
+        },
+        {
+          "label": "Taban Çapı",
+          "value": "12 cm"
+        },
+        {
+          "label": "Pil Ömrü",
+          "value": "8 saat"
+        },
+        {
+          "label": "Renk",
+          "value": "Beyaz"
+        },
+        {
+          "label": "Üretim Yeri",
+          "value": "Türkiye"
+        }
       ],
       "sellCount": 678,
       "shipping": {
@@ -369,9 +440,11 @@
       }
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Seramik Mumluk Set",
-      "categories": ["ev-yasam"],
+      "categories": [
+        "ev-yasam"
+      ],
       "brand": "MaisonBloom",
       "rating": 4.9,
       "reviewCount": 56,
@@ -429,11 +502,26 @@
       "stock": 15,
       "description": "3'lü seramik mumluk seti, el yapımı desenler ve özel sırlama tekniği ile üretilmiştir. Her biri benzersiz desenlere sahip bu set, evinizin farklı köşelerinde kullanılabilir.",
       "specifications": [
-        { "label": "Malzeme", "value": "Seramik" },
-        { "label": "Set İçeriği", "value": "3 Parça" },
-        { "label": "Ağırlık", "value": "1200g" },
-        { "label": "Renk", "value": "Krem" },
-        { "label": "Üretim Yeri", "value": "Türkiye" }
+        {
+          "label": "Malzeme",
+          "value": "Seramik"
+        },
+        {
+          "label": "Set İçeriği",
+          "value": "3 Parça"
+        },
+        {
+          "label": "Ağırlık",
+          "value": "1200g"
+        },
+        {
+          "label": "Renk",
+          "value": "Krem"
+        },
+        {
+          "label": "Üretim Yeri",
+          "value": "Türkiye"
+        }
       ],
       "sellCount": 789,
       "shipping": {
@@ -442,9 +530,12 @@
       }
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Mermer Mumluk",
-      "categories": ["ev-yasam", "flas-urunler"],
+      "categories": [
+        "ev-yasam",
+        "flas-urunler"
+      ],
       "brand": "MaisonBloom",
       "rating": 4.7,
       "reviewCount": 28,
@@ -519,11 +610,26 @@
       "stock": 20,
       "description": "Doğal mermerden üretilen bu mumluk, lüks ve dayanıklılığı bir arada sunuyor. Her biri benzersiz damarlara sahip olan bu parçalar, evinize sofistike bir dokunuş katacak.",
       "specifications": [
-        { "label": "Malzeme", "value": "Doğal Mermer" },
-        { "label": "Taban Çapı", "value": "14 cm" },
-        { "label": "Ağırlık", "value": "1500g" },
-        { "label": "Renk", "value": "Beyaz Mermer" },
-        { "label": "Üretim Yeri", "value": "Türkiye" }
+        {
+          "label": "Malzeme",
+          "value": "Doğal Mermer"
+        },
+        {
+          "label": "Taban Çapı",
+          "value": "14 cm"
+        },
+        {
+          "label": "Ağırlık",
+          "value": "1500g"
+        },
+        {
+          "label": "Renk",
+          "value": "Beyaz Mermer"
+        },
+        {
+          "label": "Üretim Yeri",
+          "value": "Türkiye"
+        }
       ],
       "sellCount": 567,
       "shipping": {
@@ -532,7 +638,7 @@
       }
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Organik Yüz Kremi",
       "brand": "MaisonBloom",
       "rating": 4.8,
@@ -542,7 +648,11 @@
         "rating": 9.4,
         "isOfficial": true
       },
-      "categories": ["kozmetik", "kadin", "cok-satanlar"],
+      "categories": [
+        "kozmetik",
+        "kadin",
+        "cok-satanlar"
+      ],
       "price": {
         "base": "129.90",
         "old": "259.90"
@@ -580,7 +690,7 @@
       }
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Erkek Deri Cüzdan",
       "brand": "MaisonBloom",
       "rating": 4.7,
@@ -590,7 +700,11 @@
         "rating": 9.4,
         "isOfficial": true
       },
-      "categories": ["erkek", "cok-satanlar", "flas-urunler"],
+      "categories": [
+        "erkek",
+        "cok-satanlar",
+        "flas-urunler"
+      ],
       "price": {
         "base": "299.90",
         "old": "499.90"
@@ -624,7 +738,7 @@
       }
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Bebek Uyku Seti",
       "brand": "MaisonBloom",
       "rating": 4.9,
@@ -634,7 +748,10 @@
         "rating": 9.4,
         "isOfficial": true
       },
-      "categories": ["anne-cocuk", "cok-satanlar"],
+      "categories": [
+        "anne-cocuk",
+        "cok-satanlar"
+      ],
       "price": {
         "base": "199.90",
         "old": "399.90"
@@ -672,7 +789,7 @@
       }
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Kadın El Çantası",
       "brand": "MaisonBloom",
       "rating": 4.6,
@@ -682,7 +799,10 @@
         "rating": 9.4,
         "isOfficial": true
       },
-      "categories": ["kadin", "flas-urunler"],
+      "categories": [
+        "kadin",
+        "flas-urunler"
+      ],
       "price": {
         "base": "399.90",
         "old": "799.90"
@@ -720,7 +840,7 @@
       }
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Organik Kahve",
       "brand": "MaisonBloom",
       "rating": 4.8,
@@ -730,7 +850,11 @@
         "rating": 9.4,
         "isOfficial": true
       },
-      "categories": ["supermarket", "cok-satanlar", "flas-urunler"],
+      "categories": [
+        "supermarket",
+        "cok-satanlar",
+        "flas-urunler"
+      ],
       "price": {
         "base": "89.90",
         "old": "149.90"
@@ -785,7 +909,7 @@
       }
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Güneş Kremi SPF50",
       "brand": "MaisonBloom",
       "rating": 4.7,
@@ -795,7 +919,10 @@
         "rating": 9.4,
         "isOfficial": true
       },
-      "categories": ["kozmetik", "supermarket"],
+      "categories": [
+        "kozmetik",
+        "supermarket"
+      ],
       "price": {
         "base": "159.90",
         "old": "299.90"
@@ -832,5 +959,42 @@
         "estimatedDelivery": "1-2 iş günü"
       }
     }
+  ],
+  "cart": {
+    "id": 1,
+    "userId": "guest",
+    "items": [],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  "cartItems": [
+    {
+      "productId": 11,
+      "quantity": 3,
+      "addedAt": "2025-05-30T07:58:54.859Z",
+      "updatedAt": "2025-05-30T07:59:02.242Z",
+      "id": "b873"
+    },
+    {
+      "productId": 7,
+      "quantity": 3,
+      "addedAt": "2025-05-30T07:58:56.626Z",
+      "updatedAt": "2025-05-30T07:58:58.016Z",
+      "id": "b547"
+    },
+    {
+      "productId": 6,
+      "quantity": 2,
+      "addedAt": "2025-05-30T08:02:38.637Z",
+      "updatedAt": "2025-05-30T08:02:43.539Z",
+      "id": "b092"
+    },
+    {
+      "productId": 8,
+      "quantity": 6,
+      "addedAt": "2025-05-30T09:29:36.910Z",
+      "updatedAt": "2025-05-30T09:29:41.286Z",
+      "id": "e0db"
+    }
   ]
-} 
+}

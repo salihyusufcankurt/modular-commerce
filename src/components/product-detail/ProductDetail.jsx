@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { FiHeart, FiShare2 } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
+import { useCart } from '../../context/CartContext';
 import './ProductDetail.scss';
 
 const ProductDetailView = ({ product }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedPreferences, setSelectedPreferences] = useState({});
+  const { addItemToCart } = useCart();
 
   useEffect(() => {
     if (product?.images?.length > 0) {
@@ -48,6 +50,14 @@ const ProductDetailView = ({ product }) => {
       ...prev,
       [preferenceName]: optionName
     }));
+  };
+
+  const handleAddToCart = async () => {
+    if (!product?.id) return;
+    const success = await addItemToCart(product.id);
+    if (success) {
+      // Başarılı bir şekilde sepete eklendi
+    }
   };
 
   return (
@@ -130,7 +140,9 @@ const ProductDetailView = ({ product }) => {
         )}
 
         <div className="product-actions">
-          <button className="add-to-cart">Sepete Ekle</button>
+          <button className="add-to-cart" onClick={handleAddToCart}>
+            Sepete Ekle
+          </button>
           <button className="wishlist-button">
             <FiHeart />
           </button>

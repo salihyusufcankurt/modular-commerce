@@ -37,6 +37,27 @@ body {
   padding-right: var(--container-padding);
 }
 
+/* Layout Container - Push Effect */
+.layout-container {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.mini-cart-open {
+    transform: translateX(-160px);
+  }
+}
+
+/* Layout Daraltma - Amazon Style */
+body.mini-cart-open {
+  .app-grid {
+    max-width: calc(100% - 160px);
+    transition: max-width 0.3s ease;
+  }
+}
+
+.app-grid {
+  transition: max-width 0.3s ease;
+}
+
 /* Ana Grid Yapısı */
 .app-grid {
   display: grid;
@@ -47,6 +68,11 @@ body {
     [full-end];
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
+}
+
+.header.mini-cart-open ~ *,
+.header.mini-cart-open {
+  transform: translateX(-160px);
 }
 
 /* Header */
@@ -85,6 +111,7 @@ body {
   display: grid;
   grid-template-columns: inherit;
   padding: 2rem 0;
+  position: relative;
 
   > * {
     grid-column: main-start / main-end;

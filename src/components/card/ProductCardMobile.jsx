@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 import './ProductCardMobile.scss';
 
 const ProductCardMobile = ({ 
@@ -14,6 +15,7 @@ const ProductCardMobile = ({
   id 
 }) => {
   const navigate = useNavigate();
+  const { addItemToCart } = useCart();
 
   const renderStars = (rating) => {
     const stars = [];
@@ -62,6 +64,14 @@ const ProductCardMobile = ({
     navigate(`/products/${id}`);
   };
 
+  const handleAddToCart = async (e) => {
+    e.stopPropagation();
+    const success = await addItemToCart(id);
+    if (success) {
+      // Başarılı bir şekilde sepete eklendi
+    }
+  };
+
   return (
     <div className="product-card-mobile" onClick={handleCardClick}>
       <div className="product-tumb-mobile">
@@ -93,7 +103,7 @@ const ProductCardMobile = ({
             </div>
           )}
         </div>
-        <button className="addButton-mobile">Sepete Ekle</button>
+        <button className="addButton-mobile" onClick={handleAddToCart}>Sepete Ekle</button>
       </div>
     </div>
   );

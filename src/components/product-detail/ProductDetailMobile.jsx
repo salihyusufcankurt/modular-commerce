@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { FiHeart, FiShare2 } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
+import { useCart } from '../../context/CartContext';
 import './ProductDetailMobile.scss';
 
 const ProductDetailMobileView = ({ product }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedPreferences, setSelectedPreferences] = useState({});
+  const { addItemToCart } = useCart();
 
   useEffect(() => {
     if (product?.productPreferences?.length > 0) {
@@ -44,6 +46,14 @@ const ProductDetailMobileView = ({ product }) => {
       ...prev,
       [preferenceName]: optionName
     }));
+  };
+
+  const handleAddToCart = async () => {
+    if (!product?.id) return;
+    const success = await addItemToCart(product.id);
+    if (success) {
+      // Başarılı bir şekilde sepete eklendi
+    }
   };
 
   if (!product) {
@@ -177,13 +187,15 @@ const ProductDetailMobileView = ({ product }) => {
       {/* Sabit Alt Bar */}
       <div className="bottom-bar-mobile">
         <div className="bottom-bar-actions-mobile">
+          <button className="add-to-cart-mobile" onClick={handleAddToCart}>
+            Sepete Ekle
+          </button>
           <button className="wishlist-button-mobile">
             <FiHeart />
           </button>
           <button className="share-button-mobile">
             <FiShare2 />
           </button>
-          <button className="add-to-cart-mobile">Sepete Ekle</button>
         </div>
       </div>
     </div>
