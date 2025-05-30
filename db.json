@@ -967,34 +967,5 @@
     "createdAt": "2024-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   },
-  "cartItems": [
-    {
-      "productId": 11,
-      "quantity": 3,
-      "addedAt": "2025-05-30T07:58:54.859Z",
-      "updatedAt": "2025-05-30T07:59:02.242Z",
-      "id": "b873"
-    },
-    {
-      "productId": 7,
-      "quantity": 3,
-      "addedAt": "2025-05-30T07:58:56.626Z",
-      "updatedAt": "2025-05-30T07:58:58.016Z",
-      "id": "b547"
-    },
-    {
-      "productId": 6,
-      "quantity": 2,
-      "addedAt": "2025-05-30T08:02:38.637Z",
-      "updatedAt": "2025-05-30T08:02:43.539Z",
-      "id": "b092"
-    },
-    {
-      "productId": 8,
-      "quantity": 6,
-      "addedAt": "2025-05-30T09:29:36.910Z",
-      "updatedAt": "2025-05-30T09:29:41.286Z",
-      "id": "e0db"
-    }
-  ]
+  "cartItems": []
 }

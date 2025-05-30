@@ -1,9 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu, FiSearch, FiUser, FiHeart, FiShoppingCart } from 'react-icons/fi';
+import { useCart } from '../../context/CartContext';
 import './HeaderMobile.scss';
 
 const HeaderMobile = () => {
+  const { cartItemCount, openMiniCart } = useCart();
+
+  const handleCartClick = (e) => {
+    e.preventDefault();
+    openMiniCart();
+  };
+
   return (
     <header className="container p-2">
       {/* Üst Alan: Menü + Logo + Sağ İkonlar */}
@@ -15,9 +23,20 @@ const HeaderMobile = () => {
           </Link>
         </div>
         <div className="d-flex gap-3">
-          <FiUser size={20} />
-          <FiHeart size={20} />
-          <FiShoppingCart size={20} />
+          <Link to="/account">
+            <FiUser size={20} />
+          </Link>
+          <Link to="/favorites">
+            <FiHeart size={20} />
+          </Link>
+          <div 
+            className="cart-icon-wrapper"
+            onClick={handleCartClick}
+            style={{ cursor: 'pointer' }}
+          >
+            <FiShoppingCart size={20} />
+            {cartItemCount > 0 && <span className="cart-badge">{cartItemCount}</span>}
+          </div>
         </div>
       </div>
 
