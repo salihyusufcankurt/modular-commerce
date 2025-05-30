@@ -58,6 +58,7 @@ const ProductCard = ({
   const formattedOldPrice = oldPrice ? formatPrice(oldPrice) : null;
 
   const handleCardClick = () => {
+    window.scrollTo(0, 0);
     navigate(`/products/${id}`);
   };
 

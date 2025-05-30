@@ -63,7 +63,7 @@ const Header = () => {
       <nav className="row py-2 border-top align-items-center">
         <div className="col-12 d-flex align-items-center gap-3">
           <FiMenu className="menu-icon" />
-          <button className="btn btn-link p-0 text-uppercase small all-categories">
+          <button className="all-categories text-uppercase small">
             Tüm Kategoriler
             <span className="badge bg-danger text-white ms-2">Yeni</span>
           </button>
